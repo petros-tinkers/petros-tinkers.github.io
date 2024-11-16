@@ -38,9 +38,9 @@ The design is relatively simple. It's a gear driven syringe assembly. The device
 
 ### Version 1
 
-![flux dispenser V1](/projects/images/disp1.webp)
+![flux dispenser V1](/images/projects/flux/disp1.webp)
 
-![flux dispenser V1 in Hand](/projects/images/disp2.webp)
+![flux dispenser V1 in Hand](/images/projects/flux/disp2.webp)
 
 #### What didn't work
 
@@ -52,9 +52,9 @@ I wasn't a particular fan of the square casing design. It was akward to hold in 
 
 ### Version 2
 
-![flux dispenser V2 model in Fusion 360](/projects/images/disp4.webp)
+![flux dispenser V2 model in Fusion 360](/images/projects/disp4.webp)
 
-![flux dispenser V2 Model Section View](/projects/images/disp3.webp)
+![flux dispenser V2 Model Section View](/images/projects/flux/disp3.webp)
 
 In this version I re-evaluated almost everything while keeping the working principle intact.
 
