@@ -21,29 +21,26 @@ images: # These show up on the homepage. The 1st one on the project page.
 
 ### Problem
 
-I solder pcbs regularly. Everytime I try to use flux its akward. I push the syringe to get a certain ammount it keeps feeding flux even after I stop pressing wasting product and making a mess. I am also cheap and don't like the liquid flux option. Therefore I designed this mechanical dispenser.
+I solder PCBs regularly. Everytime I try to use flux it's awkward. I push the syringe to get a certain ammount it keeps feeding flux even after I stop pressing wasting product and making a mess. I am also cheap and don't like the liquid flux option. Therefore I designed this mechanical dispenser.
 
-Idea
+### Idea
 
-The design is relatively simple. Its a gear driven syringe assembly. The device consists of 8 printed parts and 2 taken from a 10ml syringe.
+The design is relatively simple. It's a gear driven syringe assembly. The device consists of 8 printed parts and 2 taken from a 10ml syringe.
 
 ### BOM
 
-1x 10ml syringe
-
-1x M3 heated insert
-
-1x M3x12mm countersank bolt
-
-2x M3x30mm countersank bolt
+- 1× 10ml syringe
+- 1× M3 heated insert
+- 1× M3×12mm countersank bolt
+- 2× M3×30mm countersank bolt
 
 ---
 
 ### Version 1
 
-![flux dispenser V1](/projects/imgaes/disp1.webp)
+![flux dispenser V1](/projects/images/disp1.webp)
 
-![flux dispenser V1 in Hand](/projects/imgaes/disp2.webp)
+![flux dispenser V1 in Hand](/projects/images/disp2.webp)
 
 #### What didn't work
 
@@ -55,9 +52,9 @@ I wasn't a particular fan of the square casing design. It was akward to hold in 
 
 ### Version 2
 
-![flux dispenser V2 model in Fusion 360](/projects/imgaes/disp4.webp)
+![flux dispenser V2 model in Fusion 360](/projects/images/disp4.webp)
 
-![flux dispenser V2 Model Section View](/projects/imgaes/disp3.webp)
+![flux dispenser V2 Model Section View](/projects/images/disp3.webp)
 
 In this version I re-evaluated almost everything while keeping the working principle intact.
 
@@ -77,22 +74,13 @@ Refill as with any syringe. Assemble in the reverse order.
 
 ### Slicer Settings
 
-Layer Height: 0.2
-
-Support type: Tree
-
-Infill Type: Adaptive Cubic
-
-Infill %: 30-40
-
-No of Walls: 4
-
-Top/Bottom Layers: 5
-
-Walls Printing Order: Outter/Inner
-
-Other: Mouse ears
-
-Brim width: 5
-
-Brim Gap: 0.2
+- Layer Height: 0.2
+- Support type: Tree
+- Infill Type: Adaptive Cubic
+- Infill %: 30-40
+- No of Walls: 4
+- Top/Bottom Layers: 5
+- Walls Printing Order: Outter/Inner
+- Other: Mouse ears
+- Brim width: 5
+- Brim Gap: 0.2
