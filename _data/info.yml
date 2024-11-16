@@ -1,0 +1,16 @@
+name: Petros Nikolakopoulos
+description: > 
+  I’m fascinated by machines. I can work around motor engines, 3D Printers, and circuit boards and I put my skills to use by crafting tools for myself and clients.
+contact:
+- title: Email
+  url: 'mailto:petrosnikolakopoulos@hotmail.com'
+  icon: '/images/icons/email.svg'
+- title: LinkedIn
+  url: 'https://www.linkedin.com/in/petros-nikolakopoulos/'
+  icon: '/images/icons/linkedin.svg'
+- title: YouTube
+  url: 'https://youtube.com/'
+  icon: '/images/icons/youtube.svg'
+- title: GitHub
+  url: 'https://github.com/petros-tinkers/'
+  icon: '/images/icons/github.svg'

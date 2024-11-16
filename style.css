@@ -1,0 +1,287 @@
+:root {
+  --text: rgb(231, 230, 230);
+  --bg: black;
+  --sidebar: rgb(27, 27, 27);
+  --border: rgb(75, 75, 75);
+  --text-secondary: rgb(206, 204, 204);
+  --panel: #1f1f1f;
+  --contact: #363438;
+  --br2: 9px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif",
+    "Sitka Small", serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0;
+  background-color: var(--bg);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+body.flex {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+
+.contact .links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  text-decoration: none;
+}
+.social-link span {
+  /* margin-top: 0.4em; */
+  height: 24px;
+  padding-top: 0.2em;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 500;
+  /* margin-bottom: 0; */
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+a {
+  color: rgb(121, 180, 246);
+  font-weight: 700;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 1.5em;
+  width: 320px;
+  background-color: var(--sidebar);
+  justify-content: space-between;
+  position: relative;
+}
+
+.contact {
+  border: 1px solid var(--border);
+  padding: 0.75em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  background-color: var(--contact);
+}
+
+.content,
+.article-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 2em;
+  width: 100%;
+}
+
+.content {
+  gap: 1em;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  background-color: var([--panel]);
+}
+
+.project {
+  padding: 1em;
+}
+
+.project a {
+  color: var(--text);
+}
+
+.project .images {
+  display: grid;
+  grid-column: 1fr 1fr 1fr;
+  grid-auto-rows: 200px;
+  grid-template-areas: ". . .";
+  gap: 1em 1em;
+  margin-top: 2em;
+  align-items: center;
+}
+.image-container {
+  position: relative;
+}
+
+.project .images img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: var(--panel);
+}
+
+.article-container {
+  gap: 3em;
+}
+
+.article {
+  border: 3px solid var(--border);
+  padding: 2em;
+  background-color: var(--panel);
+}
+
+.article h2,
+.article h3 {
+  padding: 1.5em 0 0 0;
+}
+
+.article img {
+  width: 100%;
+}
+
+.tags {
+  font-size: 1.1em;
+  font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
+    cursive;
+  color: #e4c065;
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+}
+
+/* Utillity Classes */
+.db {
+  display: block;
+}
+
+.mt1 {
+  margin-top: 1em;
+}
+
+.mb1 {
+  margin-bottom: 1em;
+}
+
+.ba1 {
+  border: 1px solid var(--border);
+}
+
+.br1 {
+  border-radius: 20px;
+}
+
+.br2 {
+  border-radius: var(--br2);
+}
+
+.pl1 {
+  padding-left: 1em;
+}
+
+.bo1 {
+  border: 3px solid var(--border);
+}
+
+/* Media Queries (Break Points) */
+
+@media only screen and (max-width: 1260px) {
+  .project .images {
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-auto-rows: 200px;
+    grid-template-areas: ". .";
+    gap: 1em 1em;
+    margin-top: 2em;
+    align-items: center;
+  }
+
+  .project .images img {
+    width: 100%;
+  }
+
+  .contact .links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  
+}
+
+@media only screen and (max-width: 1000px) {
+  body.flex {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .sidebar {
+    padding: 1em;
+    width: 100%;
+  }
+
+  .content, .article-container {
+    padding: 1em 0;
+  }
+
+  .project {
+    padding: 1em 0 1em 1em;
+    /* border-bottom: 2px solid var(--border); */
+    background-color: var(--panel);
+  }
+  .article {
+    padding: 1em;
+    border: none;
+    /* background-color: unset; */
+  }
+
+  .project .images {
+    padding-right: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-top: 2em;
+    overflow-x: scroll;
+    border-radius: var(--br2) 0 0 var(--br2);
+  }
+
+  .project .images img {
+    height: 200px;
+    width: auto;
+  }
+
+  .overlay {
+    width: 30px;
+    height: 200px;
+    background-image: linear-gradient(90deg, transparent, var(--bg));
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
