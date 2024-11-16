@@ -14,7 +14,7 @@ layout: default
         <h2 class="h3">Contact</h2>
         <div class="links">
             {% for item in site.data.info.contact %}
-                <a href="https://www.linkedin.com/in/petros-nikolakopoulos/" class="social-link">
+                <a href="{{ item.url }}" class="social-link">
                 <img src="{{ item.icon }}"/> <span>{{ item.title }}</span></a>
             {% endfor %}
         </div>

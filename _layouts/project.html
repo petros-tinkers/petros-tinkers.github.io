@@ -1,32 +1,38 @@
 ---
 layout: default
 ---
+
 <body class="flex">
-    <div class="sidebar">
-      <div>
-        <h2 class="h1">{{ site.data.info.name }}</h2>
-        <a href="/index.html" class="mt1 db mb1">← All Projects</a>
-      </div>
-      <div class="contact br1">
-        <h2 class="h3">Contact</h2>
-        <div class="links">
-            {% for item in site.data.info.contact %}
-                <a href="https://www.linkedin.com/in/petros-nikolakopoulos/" class="social-link">
-                <img src="{{ item.icon }}"/> <span>{{ item.title }}</span></a>
-            {% endfor %}
-        </div>
+  <div class="sidebar">
+    <div>
+      <h2 class="h1">{{ site.data.info.name }}</h2>
+      <a href="/index.html" class="mt1 db mb1">← All Projects</a>
+    </div>
+    <div class="contact br1">
+      <h2 class="h3">Contact</h2>
+      <div class="links">
+        {% for item in site.data.info.contact %}
+        <a href="{{ item.url }}" class="social-link">
+          <img src="{{ item.icon }}" /> <span>{{ item.title }}</span></a
+        >
+        {% endfor %}
       </div>
     </div>
-    <div class="article-container">
-      <div class="article br1 bo1">
-        <h1>{{ page.title }}</h1>
-        <div class="tags">
-            {% for tag in page.tags %}
-                <div>{{ tag }}</div>
-            {% endfor %}
-        </div>
-        <img src="{{ page.images[0].url }}" alt="{{ page.images[0].alt }}" class="br1" />
-        {{ content }}
+  </div>
+  <div class="article-container">
+    <div class="article br1 bo1">
+      <h1>{{ page.title }}</h1>
+      <div class="tags">
+        {% for tag in page.tags %}
+        <div>{{ tag }}</div>
+        {% endfor %}
       </div>
+      <img
+        src="{{ page.images[0].url }}"
+        alt="{{ page.images[0].alt }}"
+        class="br1"
+      />
+      {{ content }}
     </div>
-  </body>
+  </div>
+</body>
