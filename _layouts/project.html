@@ -12,7 +12,22 @@ layout: default
       <h2 class="h3">Contact</h2>
       <div class="links">
         {% for item in site.data.info.contact %}
-        <a href="{{ item.url }}" class="social-link">
+        <a
+          href="#"
+          class="social-link"
+          {%
+          if
+          item.user
+          and
+          item.domain
+          %}
+          id="email-link"
+          data-user="{{ item.user }}"
+          data-domain="{{ item.domain }}"
+          {%
+          endif
+          %}
+        >
           <img src="{{ item.icon }}" /> <span>{{ item.title }}</span></a
         >
         {% endfor %}
@@ -35,4 +50,5 @@ layout: default
       {{ content }}
     </div>
   </div>
+  <script src="/email.js"></script>
 </body>
