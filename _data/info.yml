@@ -3,8 +3,7 @@ description: >
   I’m fascinated by machines. I can work around motor engines, 3D Printers, and circuit boards and I put my skills to use by crafting tools for myself and clients.
 contact:
   - title: Email
-    user: "petrosnikolakopoulos"
-    domain: "hotmail.com"
+    url: "mailto:petrosnikolakopoulos@hotmail.com"
     icon: "/images/icons/email.svg"
   - title: LinkedIn
     url: "https://www.linkedin.com/in/petros-nikolakopoulos/"
