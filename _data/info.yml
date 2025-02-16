@@ -1,19 +1,19 @@
 name: Petros Nikolakopoulos
-description: >
-  I’m fascinated by machines. I can work around motor engines, 3D Printers, and circuit boards and I put my skills to use by crafting tools for myself and clients.
+description: |
+  Mechatronics Engineer and 3D&nbsp;Printing Enthusiast
 contact:
-  - title: Email
-    url: "mailto:petrosnikolakopoulos@hotmail.com"
-    icon: "/images/icons/email.svg"
+  # - title: Email
+  #   url: "mailto:petrosnikolakopoulos@hotmail.com"
+  #   icon: "/assets/icons/email.svg"
   - title: LinkedIn
     url: "https://www.linkedin.com/in/petros-nikolakopoulos/"
-    icon: "/images/icons/linkedin.svg"
+    icon: "/assets/icons/linkedin.svg"
   - title: YouTube
     url: "https://www.youtube.com/@FR2W-FromRagstoWrenches"
-    icon: "/images/icons/youtube.svg"
+    icon: "/assets/icons/youtube.svg"
   - title: GitHub
     url: "https://github.com/petros-tinkers/"
-    icon: "/images/icons/github.svg"
+    icon: "/assets/icons/github.svg"
   - title: Printables
     url: "https://www.printables.com/@TINKERbell84_1365490"
-    icon: "/images/icons/printables.svg"
+    icon: "/assets/icons/printables.svg"

@@ -1,6 +1,7 @@
-
 .DS_Store
 _includes/.DS_Store
 /vendor
 .jekyll-cache/
 /_site
+.obsidian/
+=

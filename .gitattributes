@@ -1,0 +1,6 @@
+*.mp4 binary
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.webm binary
+*.webm filter=lfs diff=lfs merge=lfs -text
+*.mov binary
+*.mov filter=lfs diff=lfs merge=lfs -text 

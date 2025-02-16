@@ -7,7 +7,7 @@ layout: default
       <div>
         <h1>{{ site.data.info.name }}</h1>
         <p>
-            {{ site.data.info.description }}
+            {{ site.data.info.description | markdownify }}
         </p>
       </div>
       <div class="contact br1">
@@ -22,31 +22,35 @@ layout: default
     </div>
 
     <div class="content">
-      <div class="pl1"><h2>Select Projects</h2></div>
-      <div class="project-container">
-        {% for project in site.projects %}
-        <div class="project br1 bo1">
-            <div class="text">
-                <h3>{{ project.title }}</h3>
-                <div class="tags">
-                    {% for tag in project.tags %}
-                        <div>{{ tag }}</div>
-                    {% endfor %}
-                </div>
-                <p>
-                {{ project.description }}
-                </p>
-                <a href="{{ project.url }}">See full project</a>
-            </div>
-            <div class="image-container">
-                <div class="images">
-                {% for image in project.images %}
-                    <img src="{{ image.url }}" alt="{{ image.alt }}" class="br2 bo1"/>                    
-                {% endfor %}
-                </div>
-            </div>
+
+        <div class="pl1"><h2>Select Projects</h2></div>
+        <div class="project-container">
+          {% for project in site.projects %}
+          <div class="project br1 bo1">
+              <div class="text">
+                  <h3>{{ project.title }}</h3>
+                  <div class="tags">
+                      {% for tag in project.tags %}
+                          <div>{{ tag }}</div>
+                      {% endfor %}
+                  </div>
+                  <p>
+                  {{ project.description }}
+                  </p>
+                  <a href="{{ project.url }}">See full project</a>
+              </div>
+              <div class="image-container">
+                  <div class="images">
+                  {% for image in project.images %}
+                      <img src="{{ image.url }}" alt="{{ image.alt }}" class="br2 bo1"/>                    
+                  {% endfor %}
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
-      </div>
+      
     </div>
+
+    
   </body>
