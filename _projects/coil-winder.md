@@ -4,9 +4,10 @@ title: Coil Winder Tool
 tags:
   - 3D Printing
   - 3D Modeling
+  - Custom Tool
 
 description: >
-  This is a quick tool I whiped up in cad. I was trying to repair the seatbelt winding springs on the Celica when one got unwound. I tried to wind it by hand and was rewarder with cuts on my hands and no srping. I have been trying to wind it manualy for half an hour. With this tool I was able to do it in 5min without feeling I am defusing a timed bomb.
+  This is a quick tool I whiped up in cad. I was trying to repair the seatbelt winding springs on the Celica when one got unwound. I tried to wind it by hand and was rewarder with cuts on my hands and no results. I have been trying to wind it manualy for half an hour (unsuccessfully). With this tool I was able to do it in 5min without feeling I am defusing a timed bomb.
 images: # These show up on the homepage. The 1st one on the project page.
   - url: /assets/projects/coil-spring-winder/coil-spring-winder.png
     alt: Render of assembled winder tool
@@ -35,9 +36,9 @@ When I tried this method I failed to tie it and the spring exploded on me twice.
 Your browser does not support video playback.
 </video>
 
-The base design and working principle are the same as with the previous version. The tool is basically a 3 part constraining mould with a cutout slit and a crank. The middle tang of the spring is secured in the crank slit, then the rest of the coil is passed through the slit, and the whole assembly gets bolted together with some M3 hardware.
+The base design and working principle are the same as with the previous version. The tool is basically a 3 part constraining mould, with a cutout slit and a crank. The middle tang of the spring is secured in the crank slit, then the rest of the coil is passed through the slit, and the whole assembly gets bolted together with some M3 hardware.
 
-What is different is the inclusion of the 5 slot cutouts. These allow to insert zip ties through the mould, and enable tying only the coil (and not the coil to the mould).
+What is different is the inclusion of the 5 slot cutouts. These allow for zip ties to be inserted through the mould, securing only the coil.
 
 ![Winder V2 internals](/assets/projects/coil-spring-winder/coil-spring-winder-internals.png)
 
@@ -47,7 +48,7 @@ Place the crank through the top piece and through the middle piece.
 Then insert the coil center tang in the crank slit.
 Pass the steel ribbon through the slit.
 Place the bottom part and screw the mould together.
-Start cranking and occassionally pushing material in if needed.
+Start cranking and occassionally pushing material in (if needed).
 
 ## Video of the device in action
 

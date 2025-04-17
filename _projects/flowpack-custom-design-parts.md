@@ -5,11 +5,7 @@ tags:
   - CAD
   - 3D Printing
 description: >
-  I solder PCBs regularly. Every time I try to use flux, it's awkward.
-  I push the syringe to get a certain amount, but it keeps feeding flux
-  even after I stop pressing, wasting product and making a mess.
-  I am also cheap and don't like the liquid flux option. Therefore,
-  I designed this mechanical dispenser.
+  Custom parts I designed for an old industrial Flopack machine from the 60's
 images: # These show up on the homepage. The 1st one on the project page.
   - url: /assets/projects/flowpack-restoration-design-parts/fmc-italiana-spa-coveyor-chain-parts-isometric-top.png
     alt: CAD model isometric top view of conveyor chain modified parts
