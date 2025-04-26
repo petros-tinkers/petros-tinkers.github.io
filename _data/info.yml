@@ -2,9 +2,9 @@ name: Petros Nikolakopoulos
 description: |
   Mechatronics Engineer and 3D&nbsp;Printing Enthusiast
 contact:
-  # - title: Email
-  #   url: "mailto:petrosnikolakopoulos@hotmail.com"
-  #   icon: "/assets/icons/email.svg"
+   - title: Email
+     url: "mailto:hi@petros.contact"
+     icon: "/assets/icons/email.svg"
   - title: LinkedIn
     url: "https://www.linkedin.com/in/petros-nikolakopoulos/"
     icon: "/assets/icons/linkedin.svg"
