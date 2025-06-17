@@ -1,6 +1,9 @@
 name: Petros Nikolakopoulos
 description: |
-  Mechatronics Graduate and 3D&nbsp;Printing Enthusiast.
+  I'm passionate about solving automotive problems that don't have obvious answers.
+As a Mechatronics student, I love diving deep into issues that require more than just swapping parts. My approach combines systematic diagnosis with custom solutions, whether that's reverse-engineering discontinued parts through CAD and 3D printing, or designing electronics to work around failed components.
+I work primarily on my own vehicles and personal projects, which gives me the time to really understand systems and experiment with different approaches. Recent projects include fabricating a functional foglight reflector when no replacement existed, and designing a microcontroller solution for failed popup headlight logic.
+Everything takes me longer than it probably should, but I focus on understanding the problem completely and getting the fix right. I document my process because I find that explaining the work helps me learn, and I enjoy connecting with others who appreciate the engineering side of automotive problem-solving.
 contact:
   - title: Email
     url: "mailto:hi@petros.contact"
