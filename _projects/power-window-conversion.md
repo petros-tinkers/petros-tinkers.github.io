@@ -23,7 +23,7 @@ images: # These show up on the homepage. The 1st one on the project page.
 
 My old power window kit kept failing on trips—windows stuck open or shut, no AC, no manual override—so I tore it out and went back to a crank. That worked, but I couldn’t adjust the window while driving solo. The original install was trash: speaker wire, oversized fuse, direct ignition power, cracked sheaths from bad cable angles, and sloppy mounting. I redid it right—used M4 rivnuts for solid mounting, proper gauge wires, crimped connections, heatshrink, a relay to isolate power, resettable fuse, and wrapped everything in fabric tape. The old DPDT switch system was too basic—no current sensing, so fuses popped if held too long. The new setup uses a control module with one-touch, current sensing via microcontroller and ADC, and a relay H-bridge to control motor direction. Switches now just signal the module. Transistors and flyback diodes safely handle relay control. Now it’s reliable, safe, and hands-free.
 
-If you prefer videos over reading you can watch the video version [Here](https://youtu.be/mb-2TtQqoJQ)
+If you prefer videos over reading you can watch the video version [Here](https://youtube.com/shorts/bVmr3LBrW28)
 
 ### Problem
 
