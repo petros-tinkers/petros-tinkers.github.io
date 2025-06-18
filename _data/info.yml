@@ -1,22 +1,26 @@
+---
 name: Petros Nikolakopoulos
-description: |
-  I'm passionate about solving automotive problems that don't have obvious answers.
-As a Mechatronics student, I love diving deep into issues that require more than just swapping parts. My approach combines systematic diagnosis with custom solutions, whether that's reverse-engineering discontinued parts through CAD and 3D printing, or designing electronics to work around failed components.
-I work primarily on my own vehicles and personal projects, which gives me the time to really understand systems and experiment with different approaches. Recent projects include fabricating a functional foglight reflector when no replacement existed, and designing a microcontroller solution for failed popup headlight logic.
-Everything takes me longer than it probably should, but I focus on understanding the problem completely and getting the fix right. I document my process because I find that explaining the work helps me learn, and I enjoy connecting with others who appreciate the engineering side of automotive problem-solving.
+description: >
+  This is where I document my projects. Explaining helps me learn
+  (plus I love connecting with people). I work primarily on my own
+  vehicles/projects. This lets me understand systems and experiment freely. As a
+  Mechatronics tech I'm all about solving problems that don't have
+  obvious answers, diving deep into issues instead of throwing parts at it. How I do it? By
+  combining systematic diagnosis with custom solutions, often involving CAD/3D printing, as well as designing electronics to replace faulty factory
+  components.
 contact:
   - title: Email
-    url: "mailto:hi@petros.contact"
-    icon: "/assets/icons/email.svg"
+    url: mailto:hi@petros.contact
+    icon: /assets/icons/email.svg
   - title: LinkedIn
-    url: "https://www.linkedin.com/in/petros-nikolakopoulos/"
-    icon: "/assets/icons/linkedin.svg"
+    url: https://www.linkedin.com/in/petros-nikolakopoulos/
+    icon: /assets/icons/linkedin.svg
   - title: YouTube
-    url: "https://www.youtube.com/@FR2W-FromRagstoWrenches"
-    icon: "/assets/icons/youtube.svg"
+    url: https://www.youtube.com/@FR2W-FromRagstoWrenches
+    icon: /assets/icons/youtube.svg
   - title: GitHub
-    url: "https://github.com/petros-tinkers/"
-    icon: "/assets/icons/github.svg"
+    url: https://github.com/petros-tinkers/
+    icon: /assets/icons/github.svg
   - title: Printables
-    url: "https://www.printables.com/@TINKERbell84_1365490"
-    icon: "/assets/icons/printables.svg"
+    url: https://www.printables.com/@TINKERbell84_1365490
+    icon: /assets/icons/printables.svg
