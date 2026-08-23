@@ -1,0 +1,46 @@
+---
+description: CSS class and specificity practices — prefer utilities, avoid overrides and redundant classes
+globs: "**/*.{css,html,liquid}"
+alwaysApply: false
+---
+
+# CSS: utilities, no redundant classes, no overrides
+
+## Prefer styling the specific element
+
+Put styles on the element that needs them. Do not set a broad rule and then override it on children or wrappers.
+
+```css
+/* ❌ BAD — bold on all links, then undo on cards */
+a { font-weight: 700; }
+.project { font-weight: 400; }
+
+/* ✅ GOOD — bold only where links should look bold */
+.prose a { font-weight: 700; }
+```
+
+If inheritance forces an override, fix the source rule instead of stacking resets.
+
+## No redundant classes
+
+Do not create a class that only restates defaults or packs one-off properties that belong elsewhere.
+
+- Do not set `font-weight: 400` / `normal` unless you are correcting a real inheritance problem (prefer fixing the source — see above).
+- Do not shrink or restyle type “just because” on a subtitle/meta line unless asked.
+- Do not invent a component class (e.g. `.project-subtitle`) for a single shared concern like muted color.
+
+## Prefer utility classes for shared concerns
+
+If the only meaningful style is something reusable (e.g. secondary/muted text), add or reuse a utility and apply it in the markup.
+
+```html
+<!-- ❌ BAD -->
+<div class="project-subtitle">…</div>
+/* .project-subtitle { color: var(--text-secondary); font-size: 0.95em; font-weight: 400; } */
+
+<!-- ✅ GOOD -->
+<div class="secondary">…</div>
+/* .secondary { color: var(--text-secondary); } */
+```
+
+Keep utilities single-purpose. Layout wrappers (e.g. `.project-text` for flex + gap) are fine when they own real structure, not decorative restatements.

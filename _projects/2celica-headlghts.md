@@ -1,96 +1,98 @@
 ---
 layout: project
-title: Celica Headlights (W.I.P)
+title: Celica Headlights
+subtitle: When life gives you broken lights… make them wink
 tags:
   - Automotive
   - Electronics
-  - Diagnostics
 description: >
-  One of the pop-up headlights was not deploying or retracting due to fried logic in the RTR Control Unit (a proprietary Toyota chip). Temporary manual control was achieved (by the use of a bypass momentary switch). A programmable ATtiny microcontroller is proposed as a permanent fix.
+  One pop-up headlight stopped moving. The motor was fine; the Toyota RTR control chip wasn't. A momentary switch got me manual control (and a wink). An ATtiny board is the permanent fix, still in progress.
 images: # These show up on the homepage. The 1st one on the project page.
   - url: /assets/projects/celica-headlight/celica-wink.gif
     alt: Toyota Celica Winking
   - url: /assets/projects/celica-headlight/prototype-controller-celica-headlight.jpg
     alt: Custom PCB controller
+video: /assets/projects/celica-headlight/celica-winking.mp4
 ---
 
-### TLDR
+## TL;DR
 
-One of the pop-up headlights was not deploying or retracting due to fried logic in the RTR Control Unit (a proprietary Toyota chip). Temporary manual control was achieved (by the use of a bypass momentary switch). A programmable ATtiny microcontroller is proposed as a permanent fix.
+One of our Celica’s pop-up headlights stopped deploying and retracting. The motor still worked, the wiring was fine, and the relays measured fine. The proprietary logic IC in Toyota's RTR Control Unit was half-fried.
 
-### Problem
+I bypassed relay #2 with a momentary switch so I can run that motor by hand. As a byproduct, I can now make the car wink, to the amazement of bystanders ;) 
 
-One of the pop-up headlights is not deploying or retracting. The cause was determined to be fried logic in the RTR Unit (Toyota proprietary chip).
-This car is equipped with flip-up headlights. It utilizes a retraction mechanism consisting of headlight motors, motor relays, and the RTR Control Unit.
+That’s a temporary solution. The long-term plan is a programmable ATtiny board with optocouplers that restores factory-like automatic control and keeps the wink as a feature. Still working on the sync.
 
-### Temporary Solution
+---
 
-Removed relay #2 and connected a momentary pushbutton switch between the N.O. (normally open) trace on the PCB and a steady supply of 12V. This setup restored motor functionality, enabling manual control.
-An unexpected but enjoyable side effect of this workaround is the ability to make the car "wink" by operating the headlights independently. This happy accident has added a sense of fun and character to the car. It not only brings me joy but also puts smiles on the faces of passing motorists and pedestrians. This little quirk has made the car feel even more special and unique. 😄
-While the current solution is functional and entertaining, the ultimate goal remains restoring automated factory-like control.
+## Stuck up (or down)
+
+This Celica has flip-up headlights: a motor on each side, relays to drive them, and an RTR Control Unit that decides when each lamp goes up or down. One day one side just stopped listening. Lights switch on and that lamp stays put, either up or down depending on where it last stopped. I wanted both sides moving again without hunting down a replacement RTR.
+
+## The wink workaround
+
+I needed something usable while I figured out the real fault. I removed relay #2 from the RTR board and jumped a momentary pushbutton between the N.O. (normally open) trace and a steady 12 V supply. Hold the button and the motor runs; let go and it stops. Crude, but it put the headlight back under my control.
+
+Then I noticed the two lamps no longer have to move as a pair. Hold the bypass on one side and leave the other alone, and the car winks. I do it at lights, people notice, and some of them wave. It's dumb and I like it a lot.
+
+The button is still temporary. I want automatic, factory-like motion again, but the wink is staying.
 
 <video width="100%" height="auto" autoplay loop muted playsinline>
   <source src="/assets/projects/celica-headlight/celica-winking.mp4">
 Your browser does not support video playback.
 </video>
 
-### Initial Investigation
+## Ruling things out
 
-Uncovered a wiring diagram from the internet to gain intuition on how the system functions and help identify which wires connect to what component and for what purpose.
-Checked the RTR fuse in the engine bay fuse box, a single 30A fuse powering both motors. Since one motor received power, the fuse was ruled out as the issue.
-Searched for the RTR relay in the engine bay but found none. Located the headlight relay and verified it worked since both headlights lit up.
+I started the way you usually do: find a wiring diagram online and learn which wire does what before you start poking live circuits. The RTR fuse in the engine bay is a single 30 A fuse for both motors. One motor still moved, so the fuse was fine. I hunted for an "RTR relay" in the bay and never found one. The headlight relay that actually lights the bulbs was fine too (both lamps lit when they should).
 
----
+At the dead motor, the multimeter showed no power arriving. I used a homemade power probe on the working motor to map which thick wire was ground and which was +12 V. The diagram checked out: thick black/white striped cable is ground. On the dead side I probed the thick wire and fed it +12 V. The motor ran.
 
-### Testing the Faulty Motor
+So the motor itself was healthy. Power just never got there in normal use. That left three possibilities:
 
-A multimeter confirmed the faulty motor did not receive power.
-Using a homemade power probe, I probed the working motor's wires to identify ground and power connections. Verified the wiring diagram: the thick black/white striped cable was ground. At the faulty motor, probed the thick wire with the power probe and connected it to +12V. The motor worked.
-This confirmed the motor works but does not receive power. Possible scenarios:
-Severed wires or wires with increased resistance due to wear, humidity, or other factors.
-Faulty internal motor position switch.
-Faulty RTR Control Unit.
+1. Severed or high-resistance wiring (age, humidity, chafe)
+2. A failed internal position switch inside the motor
+3. A dead or half-dead RTR Control Unit
 
-### Narrowing Down the Problem
+I pulled the dash and found the RTR tucked under the CD player. Unplugged the connector and continuity-checked the harness with a multimeter. Wires were good, so scenario 1 was out. Resistance on the motor's internal switch matched the working side, so scenario 2 looked unlikely.
 
-Removed the dash and located the RTR Control Unit below the CD player. Unplugged its connector and tested for continuity with a multimeter. Wires were fine, ruling out severed or degraded wiring (Scenario #1).
-Tested the internal motor switch for resistance. Values matched the functioning motor, making Scenario #2 improbable.
-Disassembled the RTR Control Unit. Checked the relays controlling the motors, desoldered, and tested the resistance of the relays' switch and coil sides. Relays showed expected values (continuity on the switch side, and proper resistance on the coil), ruling them out as the issue.
-Concluded that the Toyota proprietary logic IC responsible for switching relay #2 was partially fried (after checking the diodes, and various capacitors on the board of course).
+Then I opened the RTR itself. Desoldered the motor relays and measured switch and coil sides. Continuity where it should be, coil resistance where it should be. Relays were fine. Caps and diodes on the board looked and measured fine too.
 
-### Permanent Solution Proposal
+What remained was the Toyota proprietary logic IC that switches relay #2. That chip was partially fried.
 
-The goal is to restore factory-like headlight control using a programmable ATtiny microcontroller and optocouplers.
-Probed wires to find signals for headlight extension/retraction triggers.
-Used EL817 optocouplers as ATtiny input controllers (to effectively isolate and therefore protect both the microcontroller and the car from mulfuntions). Configuration: input with a 12V signal and 680Ω current-limiting resistor; output with the transistor side in pull-up configuration using a 1k–10k resistor.
+## Building a stand-in
 
-Below there's a picture of similar diagram from the Arduino Forum:
+Replacement RTRs aren't easy to find, and I wanted something I could program and repair anyway. An ATtiny plus optocouplers: listen to the car's existing triggers, drive the motors safely, and keep the wink on purpose.
 
-![Example diagram of optocoupler wiring as microcrontroller input](/assets/projects/celica-headlight/optocoupler-diagram.jpg)
+I probed for the signals that mean "extend" and "retract." For inputs I used EL817 optocouplers so the microcontroller and the car stay electrically isolated. Input side: 12 V signal through a 680 Ω current-limiting resistor. Output side: transistor in a pull-up configuration with a 1k–10k resistor. If something goes wrong on the car side, it shouldn't take the MCU with it, and vice versa.
 
-Added two more EL817 optocouplers, two relays, and flyback diodes to safely control motor motion with the ATtiny.
-Program logic included determining necessary conditions for motor rotation, creating a table of inputs (signals) and outputs (motor rotation states), and writing code with two if statements containing conditions for motor rotation. Added wink functionality using millis() for multitasking and an interrupt button.
+Same idea as this diagram from the Arduino Forum:
 
-You might wander what about the vehicle wiring? How is he going to connect this board to the vehicle. I used a multimeter and my diy power probe to figure out what each wire connects in the connector of the original unit. Common sense is a usefull tool too, for example the the tick wires must be the motor connection. Also another clue is that the thick wires are connected to the output relays on the board.
+![Example diagram of optocoupler wiring as microcontroller input](/assets/projects/celica-headlight/optocoupler-diagram.jpg)
+
+On the output side I added two more EL817s, two relays, and flyback diodes so the ATtiny can command motor motion without eating inductive spikes. The program logic is straightforward on paper: figure out which input combinations mean which motor directions, write that down as a table, then implement it with a couple of `if` statements. Wink support uses `millis()` for non-blocking timing and an interrupt button so a wink doesn't freeze the rest of the control loop.
+
+Connecting it to the car meant reverse-engineering the original connector. Multimeter, power probe, and common sense: the thick wires land on the output relays, so those are the motor feeds. The rest fell into place once I traced them against the diagram and the board.
 
 ![Pinout Diagram of the original Pop Up Control Unit (R.T.R Controller)](/assets/projects/celica-headlight/celica-rtr-unit-connector-diagram.jpg)
 
-### Challenges Encountered
+## Why it still misbehaves
 
-The faulty motor lagged behind the other. Attempted to drive both motors directly from the custom PCB but discovered up/down position relies on the RTR Control Unit.
-Tried to emulate the motor with a resistor between the RTR relay side and ground to complete the logic circuit. Measured motor resistance between green and white/black wires to find the correct resistor value. However resistor emulation did not work.
-Tested different program versions but encountered issues such as desynchronization, continuous movement, and getting stuck in a constant loop of retractind/deploying the headlights.
+First attempts to drive both motors from the custom board left the previously faulty side lagging. Up/down position still depends on sensing that the original RTR was doing, and my board wasn't fully in that loop yet.
 
-### Next Steps
+I tried to fake a motor for the RTR by putting a resistor between the RTR relay side and ground, hoping the logic circuit would see a completed path and behave. I measured the real motor resistance between the green and white/black wires to pick a value. Resistor emulation didn't work.
 
-Tweak the program to address these issues and finalize a reliable solution for factory-like functionality.
+Code versions since then have been a mix of almost working: lamps out of sync, continuous motion that never settles, or a tight loop of deploy/retract forever. Good enough to prove the hardware works, not ready to leave installed.
 
-### New Idea
+## Next try
 
-I've been trying different versions of code and up to this point I haven't got it to work properly (either didn't work, was out of synch, kept moving while stuck in a loop). I will have to tweak the program as well to reflect these changes.
-I had a new idea! I don't have an oscilloscope to see the signals the RTR is producing (I also do not know how to use one yet). However, I can remove the position wires from the RTR PCB and connect to my custom one. The plan is to connect the common, Up, and Down cables to the microcontroller's IO and configure them as output, input, and input respectively. The idea is that common can be set to high on startup, then if a high signal is detected on the up cable the headlight is up, if in the down it's down, else it's in between. As you can tell, I will have to tweak the logic considerably and possibly add debouncing capacitors (to avoid accidental triggers).
+I don't own an oscilloscope, and I haven't learned to use one properly yet, so I can't cleanly watch the RTR's position signals. Next idea: stop trying to infer those signals from outside and wire them into my board directly.
 
-### Custom Board Schematic
+I'll lift the position wires off the RTR PCB and land them on the custom board. Common, Up, and Down go to microcontroller IO: common as an output, Up and Down as inputs. At startup, set common high. High on Up means the lamp is up. High on Down means it's down. Neither means it's somewhere in between. That should give the ATtiny a real position state to work from.
+
+It also means rewriting a fair chunk of the control code, and probably adding debounce capacitors so noise on those lines doesn't look like a position change.
+
+## Board so far
 
 ![Custom Board Schematic diagram](/assets/projects/celica-headlight/custom-board-schematic.webp)
 ![Custom PCB controller](/assets/projects/celica-headlight/prototype-controller-celica-headlight.jpg)

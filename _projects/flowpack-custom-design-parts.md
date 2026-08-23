@@ -1,9 +1,10 @@
 ---
 layout: project
 title: Flowpack Custom Design Parts
+published: false
+subtitle: Replacement parts for a 1960s machine
 tags:
-  - CAD
-  - 3D Printing
+  - 3D
 description: >
   Custom parts I designed for an old industrial Flopack machine from the 60's
 images: # These show up on the homepage. The 1st one on the project page.

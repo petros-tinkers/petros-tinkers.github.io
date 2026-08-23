@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<body>
+  <main class="page about-page">
+    <nav class="page-nav">
+      <a href="/">← Projects</a>
+    </nav>
+    <article class="about">
+      <div class="about-main">
+        <img
+          class="about-photo"
+          src="/assets/petros-about.jpg"
+          alt="Petros working on a motorcycle in the workshop"
+        />
+        <div class="about-copy">
+          <h1>{{ page.title }}</h1>
+          <div class="about-text">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="contact-links">
+        {% for item in site.data.info.contact %}
+        <a href="{{ item.url }}" class="social-link">
+          <img src="{{ item.icon }}" alt="" />
+          {{ item.title }}
+        </a>
+        {% endfor %}
+      </div>
+    </article>
+  </main>
+</body>

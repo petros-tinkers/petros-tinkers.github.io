@@ -1,0 +1,45 @@
+---
+description: >-
+  Write or rewrite project case studies and project articles (especially
+  `_projects/*.md`). Use when the user asks to write, rewrite, deslop, or
+  edit a project post / case study / build log.
+globs: _projects/**/*.md
+alwaysApply: false
+---
+
+# Project case studies
+
+First-person build logs. Sound like Petros wrote them: specific, a bit dry humor, technical without lecturing.
+
+## Structure
+
+- Frontmatter: `layout`, `title`, `subtitle`, `tags`, `description`, `images`, optional `video` / `hero_contain`. Keep `description` factual and short (homepage blurb).
+- **Long articles** start with `## TL;DR`, then a horizontal rule (`---`), then the body. Short posts may skip TL;DR if a few paragraphs cover it; prefer TL;DR when the piece has multiple sections.
+- Headings: short, readable, with personality. Prefer `Stuck up (or down)` / `Second try: zip-tie slots` over `Problem` / `Temporary Solution` / `Challenges Encountered`.
+- Preserve existing media (`![...]`, `<video>`) unless asked to change them.
+- End with a plain closing beat (what works now, what you'll update) — not a cliffhanger and not "watch this space."
+
+## Voice
+
+- Tell a story: scene → what failed → what you tried → what worked (or what's still WIP). Room to breathe; not a telegram.
+- Active first person (`I`). Name concrete parts, measurements, and failure modes.
+- Personality is fine (wink, zip ties vs fingers). Sentimental AI padding is not ("happy accident," "sense of fun and character," fake confessions like "more than I'd admit").
+- Stay close to source facts. Do not invent stakes, rarity, danger, or morals that weren't there.
+
+## Deslop (hard avoids)
+
+- Staccato binary pairs: not `You can X. You shouldn't.` → join normally (`…, but…`) or cut the lecture.
+- Stating the obvious for drama (`of course you shouldn't drive with one light`).
+- Clever parallel punchlines (`dead enough… alive enough…`), "greatest-hits of," "take ownership," "until X lands," "boring path," "noticed the obvious."
+- Em dashes. Throat-clearing (`Here's the thing`, `It's worth noting`). `Not X. Y.` reframes.
+- Emoji unless the author already uses them in that post.
+
+## Density check
+
+Too tight → add back investigation steps, side effects, and why a design choice mattered.
+Too dramatic → delete the sentence that only performs tension.
+After a rewrite, skim once for AI rhythm (stacked 3–5 word sentences, slogan closers) and fix.
+## Reference tone
+
+Match `_projects/1power-window-conversion.md`, `_projects/2celica-headlghts.md`, and `_projects/4coil-winder.md`.
+

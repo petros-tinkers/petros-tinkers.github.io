@@ -1,9 +1,9 @@
 <!-- ---
 layout: project
 title: Flux Dispenser
+subtitle: A mechanical syringe dispenser
 tags:
-  - 3D Design
-  - 3D Printing
+  - 3D
 description: >
   I solder PCBs regularly. Every time I try to use flux, it's awkward.
   I push the syringe to get a certain amount, but it keeps feeding flux

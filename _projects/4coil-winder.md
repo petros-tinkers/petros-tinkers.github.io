@@ -1,13 +1,13 @@
 ---
 layout: project
 title: Coil Spring Winder Tool
+subtitle: Custom tool to wind a seatbelt spring safely
 tags:
-  - 3D Printing
-  - 3D Modeling
-  - Custom Tools
+  - 3D
+  - Automotive
 
 description: >
-  This is a quick tool I whiped up in cad. I was trying to repair the seatbelt winding springs on the Celica when one got unwound. I tried to wind it by hand and was rewarder with cuts on my hands and no results. I have been trying to wind it manualy for half an hour (unsuccessfully). With this tool I was able to do it in 5min without feeling I am defusing a timed bomb.
+  A quick CAD tool for rewinding a Celica seatbelt spring. Hand-winding gave me cut hands and half an hour of nothing. With this mould I got it done in about five minutes.
 images: # These show up on the homepage. The 1st one on the project page.
   - url: /assets/projects/coil-spring-winder/coil-spring-winder.png
     alt: Render of assembled winder tool
@@ -15,46 +15,54 @@ images: # These show up on the homepage. The 1st one on the project page.
     alt: Render of assembled winder tool (Side View)
   - url: /assets/projects/coil-spring-winder/coil-spring-winder-internals.png
     alt: Render of assembled winder tool (internals)
+video: /assets/projects/coil-spring-winder/coil-winder-animation.mp4
+hero_contain: true
 ---
 
-## The issue:
+## TL;DR
 
-I wanted to wind the seatbelt spring safely and quickly.
+I was repairing the seatbelt rewind springs on the Celica when one fully unwound. Winding it back by hand cut up my hands and got me nowhere after half an hour. I modeled a small 3-part mould with a crank in CAD, printed it, and finished the job in about five minutes without the spring trying to take a finger with it.
 
-## V1:
+---
 
-The early design allowed me to wind the spring successfully. However I quickly realized its biggest flaw. There was no way for me to safely tie the spring with zip ties. I have designed a push block that would raise the coil up a few milimeters. That (in theory) would allow me to tie a zip tie all over the perimeter of the spring. Theory is one thing though, and as with all things in this world it differs greatly from reality.
+## Why bother
+
+Seatbelt springs store a lot of energy in a thin steel ribbon. Once one is loose, you need to coil it tight again and lock it before you put the retractor back together. Doing that with bare hands is slow, and the ribbon edges are sharp. I wanted something that held the coil in place while I cranked, then let me zip-tie it so it couldn't explode open on the bench.
+
+## First attempt
+
+The first version could wind the spring. What it couldn't do was let me tie the coil safely afterward. I added a push block meant to raise the coil a few millimeters so a zip tie could go around the outside. On the desk that sounded fine. In practice I couldn't get a tie around it, and the spring blew open on me twice.
 
 ![Early Version of the tool](/assets/projects/coil-spring-winder/coil-winder-v1.jpg)
 
-When I tried this method I failed to tie it and the spring exploded on me twice. It was time for a redesign.
+Time for a redesign.
 
-## V2:
+## Second try: zip-tie slots
 
 <video width="100%" height="auto" autoplay loop muted playsinline>
   <source src="/assets/projects/coil-spring-winder/coil-winder-animation.mp4">
 Your browser does not support video playback.
 </video>
 
-The base design and working principle are the same as with the previous version. The tool is basically a 3 part constraining mould, with a cutout slit and a crank. The middle tang of the spring is secured in the crank slit, then the rest of the coil is passed through the slit, and the whole assembly gets bolted together with some M3 hardware.
+Same basic idea: a three-part constraining mould, a slit for the ribbon, and a crank. The middle tang of the spring sits in the crank slit, the rest of the coil feeds through the mould slit, and the whole stack bolts together with M3 hardware.
 
-What is different is the inclusion of the 5 slot cutouts. These allow for zip ties to be inserted through the mould, securing only the coil.
-
-5 zippy boys may be too many. You may get away with just 2. I just value my fingers more than 3 zipties 🤷🏻‍♂️
+The useful change is five slot cutouts through the mould. You push zip ties through those slots so they grab only the coil, not the tool. Five is probably overkill. Two might be enough. I value my fingers more than three zip ties.
 
 ![Winder V2 internals](/assets/projects/coil-spring-winder/coil-spring-winder-internals.png)
 
-## Operation
+## How to use it
 
-Place the crank through the top piece and through the middle piece.
-Then insert the coil center tang in the crank slit.
-Pass the steel ribbon through the slit.
-Place the bottom part and screw the mould together.
-Start cranking and occassionally pushing material in (if needed).
+1. Put the crank through the top piece and the middle piece
+2. Seat the coil's center tang in the crank slit
+3. Pass the steel ribbon through the mould slit
+4. Add the bottom piece and screw the mould together
+5. Crank, and push ribbon in as needed when it bunches
 
-## Video of the device in action
+## In action
 
 <video width="100%" height="auto" autoplay controls loop muted playsinline>
   <source src="/assets/projects/coil-spring-winder/coil-winder.mp4">
 Your browser does not support video playback.
 </video>
+
+Half an hour of bloody fingers turned into a few minutes of cranking. The seatbelt went back together, and the tool is still in the box for the next spring that gets away from me.

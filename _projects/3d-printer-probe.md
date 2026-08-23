@@ -1,9 +1,9 @@
 <!-- ---
 layout: project
 title: 3D Printer Probe (WIP)
+subtitle: A cheap fixed-carriage ABL probe
 tags:
-  - 3D Printing
-  - 3D Modeling
+  - 3D
 
 description: >
   I wanted to have a probe for my printer that is fixed on the carriage. I didn't find any option other than the Voron Tap. I thought to myself: Why buy a 40€ part and retrofit it onto my printer when I can spend close to that and several hours of my time to design and make my own "Cheap" one. All jokes aside the probe I designed costs <10€ in parts and performs the same.

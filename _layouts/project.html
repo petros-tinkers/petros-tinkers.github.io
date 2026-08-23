@@ -3,36 +3,96 @@ layout: default
 ---
 
 <body class="flex">
-  <div class="sidebar">
-    <div>
-      <h2 class="h1">{{ site.data.info.name }}</h2>
-      <a href="/index.html" class="mt1 db mb1">← All Projects</a>
-    </div>
-    <div class="contact br1">
-      <h2 class="h3">Contact</h2>
-      <div class="links">
-        {% for item in site.data.info.contact %}
-        <a href="{{ item.url }}" class="social-link">
-          <img src="{{ item.icon }}" /> <span>{{ item.title }}</span></a
-        >
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+  <aside class="sidebar">
+    <a href="/" class="back-link">← All Projects</a>
+    {% assign toc_marked = content
+      | replace: '<h2 id="', '[[[TOC:h2]]]'
+      | replace: '<h3 id="', '[[[TOC:h3]]]'
+    %}
+    {% assign toc_parts = toc_marked | split: '[[[TOC:' %}
+    {% if toc_parts.size > 1 %}
+    <details class="toc" open>
+      <summary>Table of Contents</summary>
+      <nav aria-label="Table of contents">
+        <ul class="section-nav">
+          {% for part in toc_parts offset: 1 %}
+          {% assign level = part | split: ']]]' | first %}
+          {% assign after = part | split: ']]]' | last %}
+          {% assign id = after | split: '"' | first %}
+          {% if level == 'h2' %}
+          {% assign title = after | split: '</h2>' | first | split: '>' | last | strip %}
+          {% else %}
+          {% assign title = after | split: '</h3>' | first | split: '>' | last | strip %}
+          {% endif %}
+          <li class="toc-entry toc-{{ level }}">
+            <a href="#{{ id }}">{{ title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </details>
+    {% endif %}
+  </aside>
+
   <div class="article-container">
-    <div class="article br1 bo1">
-      <h1>{{ page.title }}</h1>
-      <div class="tags">
-        {% for tag in page.tags %}
-        <div>{{ tag }}</div>
-        {% endfor %}
-      </div>
-      <img
-        src="{{ page.images[0].url }}"
-        alt="{{ page.images[0].alt }}"
-        class="br1"
-      />
+    <article class="article">
+      <header class="article-header">
+        <h1>{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <div class="secondary">{{ page.subtitle }}</div>
+        {% endif %}
+        {% if page.tags %}
+        <div class="tags">
+          {% for tag in page.tags %}
+          <div>{{ tag }}</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if page.images and page.images[0] %}
+        <img
+          src="{{ page.images[0].url }}"
+          alt="{{ page.images[0].alt }}"
+          class="article-hero"
+        />
+        {% endif %}
+      </header>
+
       {{ content }}
-    </div>
+
+      {% assign prev_project = nil %}
+      {% assign next_project = nil %}
+      {% for project in site.projects %}
+      {% if project.url == page.url %}
+      {% if prev %}
+      {% assign prev_project = prev %}
+      {% endif %}
+      {% unless forloop.last %}
+      {% assign next_project = site.projects[forloop.index] %}
+      {% endunless %}
+      {% endif %}
+      {% assign prev = project %}
+      {% endfor %}
+
+      {% if prev_project or next_project %}
+      <nav class="project-nav" aria-label="Project navigation">
+        {% if prev_project %}
+        <a href="{{ prev_project.url }}" rel="prev">
+          <span class="secondary">← Previous project</span>
+          <span class="project-nav-title">{{ prev_project.title }}</span>
+        </a>
+        {% else %}
+        <span></span>
+        {% endif %}
+        {% if next_project %}
+        <a href="{{ next_project.url }}" class="project-nav-next" rel="next">
+          <span class="secondary">Next project →</span>
+          <span class="project-nav-title">{{ next_project.title }}</span>
+        </a>
+        {% endif %}
+      </nav>
+      {% endif %}
+    </article>
   </div>
+
+  <script src="/assets/toc-highlight.js" defer></script>
 </body>
