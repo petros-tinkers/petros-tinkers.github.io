@@ -5,11 +5,16 @@ layout: default
 <body>
   <main class="home">
     <header class="hero">
-      <h1>{{ site.data.info.name }}</h1>
-      <p class="hero-blurb">
-        Welcome! This is where I document my projects.
-        <a href="/about/" class="nowrap">About Me →</a>
-      </p>
+      <div class="hero-intro">
+        <h1>{{ site.data.info.name }}</h1>
+        <div class="hero-blurb">
+          Welcome! This is where I document my projects.
+          <a href="/about/" class="key-prompt key-prompt-outline nowrap" data-hotkey="a">
+            <kbd class="key-prompt-key key-prompt-key-square">A</kbd>
+            <span class="key-prompt-label">About Me</span>
+          </a>
+        </div>
+      </div>
       <div class="contact-links">
         {% for item in site.data.info.contact %}
         <a
@@ -17,7 +22,7 @@ layout: default
           class="social-link"
           {% unless item.url contains 'mailto:' %}target="_blank" rel="noopener noreferrer"{% endunless %}
         >
-          <img src="{{ item.icon }}" alt="" />
+          {% include social-icon.html icon=item.icon %}
           {{ item.title }}
         </a>
         {% endfor %}
@@ -31,4 +36,5 @@ layout: default
   </main>
 
   <script src="/assets/tag-filter.js" defer></script>
+  <script src="/assets/back-esc.js" defer></script>
 </body>

@@ -1,0 +1,63 @@
+---
+description: Prefer the simplest, most backwards-compatible solution unless a fancier technique is truly required
+alwaysApply: true
+---
+
+# Simple first, compatible always
+
+Default to the **simplest solution that works everywhere**. Only reach for newer or cleverer techniques when the desired effect is **literally impossible** (or meaningfully worse) with plain HTML/CSS/JS.
+
+## Decision order
+
+1. **Plain markup** — semantic HTML, inline SVG, `<img>`, normal elements
+2. **Basic CSS** — colors, borders, padding, `currentColor`, flex/grid
+3. **Small includes/partials** — when the same markup repeats (Jekyll `_includes/`)
+4. **Modern APIs last** — masks, `color-mix`, `light-dark()`, view transitions, etc. — only if simpler options cannot do the job
+
+## When fancy is OK
+
+Use advanced CSS/JS only when you can state why simpler options fail, e.g.:
+
+- OS-driven theming without duplicate assets → `light-dark()` / `color-scheme`
+- A decorative pattern that cannot be a plain border or inline SVG → masked/repeating background
+- Client-side behavior that HTML alone cannot provide → small, focused script
+
+If a simple approach gets 95% of the way there, prefer it unless the user explicitly wants the extra polish.
+
+## Avoid
+
+- CSS masks/filters when inline SVG + `currentColor` or a styled `<img>` suffices
+- Pseudo-elements duplicating what a child element would do clearly
+- Custom properties + indirection when a direct style works
+- Abstractions for one-off use (helpers, wrappers, config) without reuse
+- Separate asset files **and** inline copies of the same icon/SVG
+
+## Example from this project
+
+```html
+<!-- ❌ BAD — mask + CSS variable + empty span + external SVG -->
+<span class="social-icon" style="--icon: url('/assets/icons/github.svg')"></span>
+
+<!-- ✅ GOOD — inline SVG, themed with currentColor -->
+<span class="social-icon" aria-hidden="true">
+  <svg viewBox="0 0 24 24"><path fill="currentColor" d="…"/></svg>
+</span>
+```
+
+```css
+/* ✅ GOOD — square + icon, no masks */
+.social-icon {
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.18em;
+}
+.social-icon svg { width: 100%; height: 100%; }
+```
+
+## Before adding complexity, ask
+
+- Can this be done with normal elements and a few lines of CSS?
+- Will this work in older browsers without polyfills or fallbacks?
+- Am I adding moving parts (files, vars, JS) that a human would struggle to edit later?
+
+If yes to the first two and no to the third, keep it simple.

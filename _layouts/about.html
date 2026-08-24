@@ -5,7 +5,10 @@ layout: default
 <body>
   <main class="page about-page">
     <nav class="page-nav">
-      <a href="/">← Projects</a>
+      <a href="/" class="key-prompt back-link">
+        <kbd class="key-prompt-key">Esc</kbd>
+        <span class="key-prompt-label">Projects</span>
+      </a>
     </nav>
     <article class="about">
       <div class="about-main">
@@ -29,11 +32,12 @@ layout: default
           class="social-link"
           {% unless item.url contains 'mailto:' %}target="_blank" rel="noopener noreferrer"{% endunless %}
         >
-          <img src="{{ item.icon }}" alt="" />
+          {% include social-icon.html icon=item.icon %}
           {{ item.title }}
         </a>
         {% endfor %}
       </div>
     </article>
   </main>
+  <script src="/assets/back-esc.js" defer></script>
 </body>

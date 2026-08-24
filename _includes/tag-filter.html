@@ -5,6 +5,7 @@
     data-tag="all"
     {% unless page.tag %}aria-current="page"{% endunless %}
   >
+    <span class="tag-filter-square" aria-hidden="true"></span>
     All Projects
   </a>
   {% for tag in site.data.tags %}
@@ -14,6 +15,7 @@
     data-tag="{{ tag.name }}"
     {% if page.tag == tag.name %}aria-current="page"{% endif %}
   >
+    <span class="tag-filter-square" aria-hidden="true"></span>
     {{ tag.name }}
   </a>
   {% endfor %}

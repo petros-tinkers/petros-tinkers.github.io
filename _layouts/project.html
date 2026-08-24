@@ -4,7 +4,10 @@ layout: default
 
 <body class="flex">
   <aside class="sidebar">
-    <a href="/" class="back-link">← All Projects</a>
+    <a href="/" class="key-prompt back-link">
+      <kbd class="key-prompt-key">Esc</kbd>
+      <span class="key-prompt-label">All Projects</span>
+    </a>
     {% assign toc_marked = content
       | replace: '<h2 id="', '[[[TOC:h2]]]'
       | replace: '<h3 id="', '[[[TOC:h3]]]'
@@ -36,22 +39,30 @@ layout: default
 
   <div class="article-container">
     <article class="article">
-      <header class="article-header">
-        <h1>{{ page.title }}</h1>
-        {% if page.subtitle %}
-        <div class="secondary">{{ page.subtitle }}</div>
-        {% endif %}
-        {% if page.tags %}
+      {% if page.tags %}
+      <div class="article-bar">
         <div class="tags">
           {% for tag in page.tags %}
           {% assign tag_page = site.data.tags | where: "name", tag | first %}
           {% if tag_page %}
-          <a href="/tags/{{ tag_page.slug }}/">{{ tag }}</a>
+          <a href="/tags/{{ tag_page.slug }}/" class="tag-filter-btn">
+            <span class="tag-filter-square" aria-hidden="true"></span>
+            {{ tag }}
+          </a>
           {% else %}
-          <span>{{ tag }}</span>
+          <span class="tag-filter-btn">
+            <span class="tag-filter-square" aria-hidden="true"></span>
+            {{ tag }}
+          </span>
           {% endif %}
           {% endfor %}
         </div>
+      </div>
+      {% endif %}
+      <header class="article-header">
+        <h1>{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <div class="secondary">{{ page.subtitle }}</div>
         {% endif %}
         {% if page.images and page.images[0] %}
         <img
@@ -99,5 +110,13 @@ layout: default
     </article>
   </div>
 
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <button type="button" class="back-to-top" aria-label="Back to top" hidden>
+    ↑
+  </button>
+
   <script src="/assets/toc-highlight.js" defer></script>
+  <script src="/assets/back-esc.js" defer></script>
+  <script src="/assets/back-to-top.js" defer></script>
 </body>

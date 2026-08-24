@@ -26,6 +26,8 @@ The previous install was garbage: speaker wire, a 20 A fuse on a 7–10 A load, 
 
 Prefer video? [Watch the short](https://youtube.com/shorts/bVmr3LBrW28).
 
+---
+
 ## Context
 
 ### Stuck on the roadside
