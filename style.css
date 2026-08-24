@@ -1,79 +1,19 @@
 :root {
-  --text: rgb(231, 230, 230);
-  --bg: black;
-  --sidebar: rgb(27, 27, 27);
-  --border: rgb(75, 75, 75);
-  --text-secondary: rgb(206, 204, 204);
-  --panel: #1f1f1f;
-  --contact: #363438;
+  color-scheme: light dark;
+  --text: light-dark(rgb(28, 28, 28), rgb(231, 230, 230));
+  --bg: light-dark(rgb(250, 250, 250), black);
+  --sidebar: light-dark(rgb(236, 236, 236), rgb(27, 27, 27));
+  --border: light-dark(rgb(213, 213, 213), rgb(75, 75, 75));
+  --text-secondary: light-dark(rgb(90, 90, 90), rgb(206, 204, 204));
+  --panel: light-dark(rgb(232, 232, 232), #1f1f1f);
+  --contact: light-dark(rgb(236, 234, 238), #363438);
+  --link: light-dark(rgb(20, 110, 200), rgb(121, 180, 246));
+  --tag: light-dark(rgb(168, 120, 20), #e4c065);
   --br2: 9px;
-  --page-transition: 0.28s ease;
-}
-
-@view-transition {
-  navigation: auto;
 }
 
 html {
   scrollbar-gutter: stable;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: var(--page-transition);
-}
-
-/* Keep chrome still — only the project grid should animate */
-::view-transition-group(hero),
-::view-transition-group(tag-filter) {
-  animation: none;
-}
-
-/* Drop the old filter snapshot so the previous active pill doesn't linger */
-::view-transition-old(tag-filter) {
-  display: none;
-}
-
-::view-transition-new(tag-filter),
-::view-transition-old(hero),
-::view-transition-new(hero) {
-  animation: none;
-}
-
-::view-transition-group(projects) {
-  animation-duration: var(--page-transition);
-}
-
-::view-transition-old(projects),
-::view-transition-new(projects) {
-  animation-duration: var(--page-transition);
-  mix-blend-mode: normal;
-}
-
-::view-transition-old(projects) {
-  animation-name: page-fade-out;
-}
-
-::view-transition-new(projects) {
-  animation-name: page-fade-in;
-}
-
-@keyframes page-fade-out {
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes page-fade-in {
-  from {
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  @view-transition {
-    navigation: none;
-  }
 }
 
 * {
@@ -102,7 +42,7 @@ h4 {
 }
 
 a {
-  color: rgb(121, 180, 246);
+  color: var(--link);
   font-weight: 700;
   text-underline-offset: 35%;
   transition: color 0.25s ease;
@@ -138,7 +78,6 @@ body.flex {
   padding-bottom: 2em;
   border-bottom: 1px solid var(--border);
   gap: 1em;
-  view-transition-name: hero;
 }
 
 .hero h1 {
@@ -206,7 +145,6 @@ body.flex {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1em;
-  view-transition-name: tag-filter;
 }
 
 .tag-filter-btn {
@@ -522,7 +460,7 @@ hr {
 
 .tags {
   font-size: 1em;
-  color: #e4c065;
+  color: var(--tag);
   display: flex;
   flex-wrap: wrap;
   gap: 0.75em;
@@ -541,7 +479,6 @@ hr {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 2rem;
-  view-transition-name: projects;
 }
 
 .project {
