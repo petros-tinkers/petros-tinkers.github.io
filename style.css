@@ -7,6 +7,73 @@
   --panel: #1f1f1f;
   --contact: #363438;
   --br2: 9px;
+  --page-transition: 0.28s ease;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--page-transition);
+}
+
+/* Keep chrome still — only the project grid should animate */
+::view-transition-group(hero),
+::view-transition-group(tag-filter) {
+  animation: none;
+}
+
+/* Drop the old filter snapshot so the previous active pill doesn't linger */
+::view-transition-old(tag-filter) {
+  display: none;
+}
+
+::view-transition-new(tag-filter),
+::view-transition-old(hero),
+::view-transition-new(hero) {
+  animation: none;
+}
+
+::view-transition-group(projects) {
+  animation-duration: var(--page-transition);
+}
+
+::view-transition-old(projects),
+::view-transition-new(projects) {
+  animation-duration: var(--page-transition);
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(projects) {
+  animation-name: page-fade-out;
+}
+
+::view-transition-new(projects) {
+  animation-name: page-fade-in;
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
 }
 
 * {
@@ -71,6 +138,7 @@ body.flex {
   padding-bottom: 2em;
   border-bottom: 1px solid var(--border);
   gap: 1em;
+  view-transition-name: hero;
 }
 
 .hero h1 {
@@ -107,6 +175,12 @@ body.flex {
   text-decoration: none;
 }
 
+.social-link img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
 .projects {
   display: flex;
   flex-direction: column;
@@ -132,6 +206,7 @@ body.flex {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1em;
+  view-transition-name: tag-filter;
 }
 
 .tag-filter-btn {
@@ -143,6 +218,7 @@ body.flex {
   border: 2px solid var(--border);
   border-radius: 0.4em;
   padding: 0.4em 1em;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -452,10 +528,20 @@ hr {
   gap: 0.75em;
 }
 
+.tags a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tags a:hover {
+  text-decoration: underline;
+}
+
 .project-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 2rem;
+  view-transition-name: projects;
 }
 
 .project {

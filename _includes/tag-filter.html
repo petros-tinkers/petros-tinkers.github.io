@@ -1,0 +1,20 @@
+<div class="tag-filter" role="group" aria-label="Filter projects by tag">
+  <a
+    href="/"
+    class="tag-filter-btn{% unless page.tag %} is-active{% endunless %}"
+    data-tag="all"
+    {% unless page.tag %}aria-current="page"{% endunless %}
+  >
+    All Projects
+  </a>
+  {% for tag in site.data.tags %}
+  <a
+    href="/tags/{{ tag.slug }}/"
+    class="tag-filter-btn{% if page.tag == tag.name %} is-active{% endif %}"
+    data-tag="{{ tag.name }}"
+    {% if page.tag == tag.name %}aria-current="page"{% endif %}
+  >
+    {{ tag.name }}
+  </a>
+  {% endfor %}
+</div>

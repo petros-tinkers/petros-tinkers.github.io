@@ -1,0 +1,47 @@
+{% comment %}
+  All projects are in the DOM so JS can filter client-side.
+  With JS, clicks filter in place and update the URL via history.pushState.
+  Without JS, non-matching projects stay hidden on tag pages,
+  and the filter links navigate to the real tag pages instead.
+{% endcomment %}
+<div class="project-container">
+  {% for project in site.projects %}
+  {% assign matches_tag = true %}
+  {% if page.tag %}
+    {% assign matches_tag = false %}
+    {% if project.tags contains page.tag %}
+      {% assign matches_tag = true %}
+    {% endif %}
+  {% endif %}
+  <a
+    href="{{ project.url }}"
+    class="project"
+    data-tags="{{ project.tags | join: ',' }}"
+    {% unless matches_tag %}hidden{% endunless %}
+  >
+    {% if project.video %}
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      {% if project.hero_contain %}class="fit-contain"{% endif %}
+    >
+      <source src="{{ project.video }}" type="video/mp4" />
+    </video>
+    {% else %}
+    <img
+      src="{{ project.images[0].url }}"
+      alt="{{ project.images[0].alt }}"
+      {% if project.hero_contain %}class="fit-contain"{% endif %}
+    />
+    {% endif %}
+    <div class="project-text">
+      <h2>{{ project.title }}</h2>
+      {% if project.subtitle %}
+      <div class="secondary">{{ project.subtitle }}</div>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>

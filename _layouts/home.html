@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<body>
+  <main class="home">
+    <header class="hero">
+      <h1>{{ site.data.info.name }}</h1>
+      <p class="hero-blurb">
+        Welcome! This is where I document my projects.
+        <a href="/about/" class="nowrap">About Me →</a>
+      </p>
+      <div class="contact-links">
+        {% for item in site.data.info.contact %}
+        <a href="{{ item.url }}" class="social-link">
+          <img src="{{ item.icon }}" alt="" />
+          {{ item.title }}
+        </a>
+        {% endfor %}
+      </div>
+    </header>
+
+    <section class="projects">
+      {% include tag-filter.html %}
+      {% include project-list.html %}
+    </section>
+  </main>
+
+  <script src="/assets/tag-filter.js" defer></script>
+</body>

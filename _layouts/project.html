@@ -44,7 +44,12 @@ layout: default
         {% if page.tags %}
         <div class="tags">
           {% for tag in page.tags %}
-          <div>{{ tag }}</div>
+          {% assign tag_page = site.data.tags | where: "name", tag | first %}
+          {% if tag_page %}
+          <a href="/tags/{{ tag_page.slug }}/">{{ tag }}</a>
+          {% else %}
+          <span>{{ tag }}</span>
+          {% endif %}
           {% endfor %}
         </div>
         {% endif %}
