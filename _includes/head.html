@@ -1,0 +1,13 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.url == "/" %}{{ site.data.info.name }}{% else %}{{ page.title }} | {{ site.data.info.name }}{% endif %}</title>
+  {% if page.image.url %}
+  {% assign og_image = page.image.url %}
+  {% else %}
+  {% assign og_image = "/assets/og-hero.png" %}
+  {% endif %}
+  <meta property="og:image" content="{{ site.url }}{{ og_image }}" />
+  <link rel="icon" href="/assets/cog.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/style.css" />
+</head>

@@ -5,17 +5,9 @@ subtitle: Adding modern comforts to a classic car
 tags:
   - Automotive
   - Electronics
-description: >
-  This car came with factory manual windows. Someone later converted the passenger side to power, then botched the install. Mounting, wiring, and how the control electronics work when you do it properly.
-images: # These show up on the homepage. The 1st one on the project page.
-  - url: /assets/projects/power-window-conversion/power-windows-working.gif
-    alt: Power windows functioning
-  - url: /assets/projects/power-window-conversion/old-regulator.png
-    alt: failed regulator (old installation)
-  - url: /assets/projects/power-window-conversion/new-regulator-installed.jpg
-    alt: New regulator installation
-  - url: /assets/projects/power-window-conversion/power-window-panel-cad.gif
-    alt: CAD model of custom switch panel
+image:
+  url: /assets/projects/power-window-conversion/power-windows-working.gif
+  alt: Power windows functioning
 ---
 
 ## TL;DR

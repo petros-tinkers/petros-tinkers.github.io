@@ -5,13 +5,9 @@ subtitle: When life gives you broken lights… make them wink
 tags:
   - Automotive
   - Electronics
-description: >
-  One pop-up headlight stopped moving. The motor was fine; the Toyota RTR control chip wasn't. A momentary switch got me manual control (and a wink). An ATtiny board is the permanent fix, still in progress.
-images: # These show up on the homepage. The 1st one on the project page.
-  - url: /assets/projects/celica-headlight/celica-wink.gif
-    alt: Toyota Celica Winking
-  - url: /assets/projects/celica-headlight/prototype-controller-celica-headlight.jpg
-    alt: Custom PCB controller
+image:
+  url: /assets/projects/celica-headlight/celica-wink.gif
+  alt: Toyota Celica Winking
 video: /assets/projects/celica-headlight/celica-winking.mp4
 ---
 

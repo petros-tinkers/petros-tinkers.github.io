@@ -64,10 +64,10 @@ layout: default
         {% if page.subtitle %}
         <div class="secondary">{{ page.subtitle }}</div>
         {% endif %}
-        {% if page.images and page.images[0] %}
+        {% if page.image %}
         <img
-          src="{{ page.images[0].url }}"
-          alt="{{ page.images[0].alt }}"
+          src="{{ page.image.url }}"
+          alt="{{ page.image.alt }}"
           class="article-hero"
         />
         {% endif %}

@@ -4,15 +4,9 @@ title: Korg SAS-20 Synth Restoration
 subtitle: Dead keys, carbon pads, and AliExpress stickers
 tags:
   - Electronics
-description: >
-  Found a Korg SAS-20 with half-dead keys while cleaning. Dust wasn't the fault. A severed wire and worn carbon pads were. Conductive stickers brought it back.
-images: # These show up on the homepage. The 1st one on the project page.
-  - url: /assets/projects/korg-sas-20-synth-restoration/korg-sas-20.png
-    alt: Reassembled Korg SAS-20 vintage synth
-  - url: /assets/projects/korg-sas-20-synth-restoration/korg-sas-20-repair-dissasembled-test.png
-    alt: Disassembled Korg SAS-20 during repair
-  - url: /assets/projects/korg-sas-20-synth-restoration/synth-repair-preperation.jpg
-    alt: Synth repair preparation and materials
+image:
+  url: /assets/projects/korg-sas-20-synth-restoration/korg-sas-20.png
+  alt: Reassembled Korg SAS-20 vintage synth
 ---
 
 ## TL;DR

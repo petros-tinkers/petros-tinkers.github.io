@@ -5,16 +5,9 @@ subtitle: Custom tool to wind a seatbelt spring safely
 tags:
   - 3D
   - Automotive
-
-description: >
-  A quick CAD tool for rewinding a Celica seatbelt spring. Hand-winding gave me cut hands and half an hour of nothing. With this mould I got it done in about five minutes.
-images: # These show up on the homepage. The 1st one on the project page.
-  - url: /assets/projects/coil-spring-winder/coil-spring-winder.png
-    alt: Render of assembled winder tool
-  - url: /assets/projects/coil-spring-winder/coil-spring-winder-side.png
-    alt: Render of assembled winder tool (Side View)
-  - url: /assets/projects/coil-spring-winder/coil-spring-winder-internals.png
-    alt: Render of assembled winder tool (internals)
+image:
+  url: /assets/projects/coil-spring-winder/coil-spring-winder.png
+  alt: Render of assembled winder tool
 video: /assets/projects/coil-spring-winder/coil-winder-animation.mp4
 hero_contain: true
 ---

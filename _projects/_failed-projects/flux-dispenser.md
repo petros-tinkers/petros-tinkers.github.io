@@ -10,13 +10,9 @@ description: >
   even after I stop pressing, wasting product and making a mess.
   I am also cheap and don't like the liquid flux option. Therefore,
   I designed this mechanical dispenser.
-images: # These show up on the homepage. The 1st one on the project page.
-  - url: /assets/projects/flux/disp4.webp
-    alt:
-  - url: /assets/projects/flux/disp3.webp
-    alt:
-  - url: /assets/projects/flux/disp1.webp
-    alt:
+image:
+  url: /assets/projects/flux/disp4.webp
+  alt:
 --- -->
 
 ### Problem

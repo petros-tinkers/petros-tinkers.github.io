@@ -13,7 +13,7 @@ First-person build logs. Sound like Petros wrote them: specific, a bit dry humor
 
 ## Structure
 
-- Frontmatter: `layout`, `title`, `subtitle`, `tags`, `description`, `images`, optional `video` / `hero_contain`. Keep `description` factual and short (homepage blurb).
+- Frontmatter: `layout`, `title`, `subtitle`, `tags`, `image`, optional `video` / `hero_contain`.
 - **Long articles** start with `## TL;DR`, then a horizontal rule (`---`), then the body. Short posts may skip TL;DR if a few paragraphs cover it; prefer TL;DR when the piece has multiple sections.
 - Headings: short, readable, with personality. Prefer `Stuck up (or down)` / `Second try: zip-tie slots` over `Problem` / `Temporary Solution` / `Challenges Encountered`.
 - Preserve existing media (`![...]`, `<video>`) unless asked to change them.

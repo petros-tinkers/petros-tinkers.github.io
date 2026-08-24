@@ -15,18 +15,7 @@ layout: default
           </a>
         </div>
       </div>
-      <div class="contact-links">
-        {% for item in site.data.info.contact %}
-        <a
-          href="{{ item.url }}"
-          class="social-link"
-          {% unless item.url contains 'mailto:' %}target="_blank" rel="noopener noreferrer"{% endunless %}
-        >
-          {% include social-icon.html icon=item.icon %}
-          {{ item.title }}
-        </a>
-        {% endfor %}
-      </div>
+      {% include contact-links.html %}
     </header>
 
     <section class="projects">

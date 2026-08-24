@@ -8,9 +8,7 @@
   --bar: light-dark(rgb(214, 210, 192), rgb(48, 46, 38));
   --text-secondary: light-dark(rgb(108, 104, 90), rgb(182, 178, 158));
   --panel: light-dark(rgb(236, 233, 216), rgb(30, 28, 23));
-  --contact: light-dark(rgb(204, 200, 176), rgb(40, 38, 32));
   --link: light-dark(rgb(48, 45, 36), rgb(214, 209, 179));
-  --tag: light-dark(rgb(120, 100, 55), rgb(177, 156, 100));
   --tint: light-dark(rgb(199, 196, 180), rgb(46, 44, 37));
   --tint-strong: light-dark(rgb(181, 178, 162), rgb(68, 66, 56));
   --overlay: light-dark(rgba(70, 66, 54, 0.12), rgba(201, 197, 170, 0.12));
@@ -121,23 +119,12 @@ body.flex {
   color: var(--text-secondary);
 }
 
-.hero-nav {
-  display: flex;
-  gap: 1.5em;
-}
-
 .contact-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1em 1.5em;
   margin-top: 0.5em;
-}
-
-.contact .links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75em;
 }
 
 .social-link {
@@ -556,15 +543,6 @@ body.flex {
   display: none;
 }
 
-.contact {
-  border: 1px solid var(--border);
-  padding: 0.75em 1em;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75em;
-  background-color: var(--contact);
-}
-
 .article-container {
   flex: 0 1 45em;
   min-width: 0;
@@ -808,48 +786,12 @@ a.project:hover .project-mark {
 }
 
 /* Utillity Classes */
-.db {
-  display: block;
-}
-
 .secondary {
   color: var(--text-secondary);
 }
 
 .nowrap {
   white-space: nowrap;
-}
-
-.mt1 {
-  margin-top: 1em;
-}
-
-.mb1 {
-  margin-bottom: 1em;
-}
-
-.mb2 {
-  margin-bottom: 2em;
-}
-
-.ba1 {
-  border: 1px solid var(--border);
-}
-
-.br1 {
-  border-radius: 0;
-}
-
-.br2 {
-  border-radius: var(--br2);
-}
-
-.pl1 {
-  padding-left: 1em;
-}
-
-.bo1 {
-  border: 3px solid var(--border);
 }
 
 .back-to-top {

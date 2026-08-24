@@ -32,8 +32,8 @@
     </video>
     {% else %}
     <img
-      src="{{ project.images[0].url }}"
-      alt="{{ project.images[0].alt }}"
+      src="{{ project.image.url }}"
+      alt="{{ project.image.alt }}"
       {% if project.hero_contain %}class="fit-contain"{% endif %}
     />
     {% endif %}

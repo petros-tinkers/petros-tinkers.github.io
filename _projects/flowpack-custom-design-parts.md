@@ -5,17 +5,9 @@ published: false
 subtitle: Replacement parts for a 1960s machine
 tags:
   - 3D
-description: >
-  Custom parts I designed for an old industrial Flopack machine from the 60's
-images: # These show up on the homepage. The 1st one on the project page.
-  - url: /assets/projects/flowpack-restoration-design-parts/fmc-italiana-spa-coveyor-chain-parts-isometric-top.png
-    alt: CAD model isometric top view of conveyor chain modified parts
-  - url: /assets/projects/flowpack-restoration-design-parts/fmc-italiana-spa-coveyor-chain-parts-isometric-side.png
-    alt: CAD model isometric side view of conveyor chain modified parts
-  - url: /assets/projects/flowpack-restoration-design-parts/fmc-italiana-spa-conveyor-parts-top.jpg
-    alt: Original conveyor parts top view (worn out)
-  - url: /assets/projects/flowpack-restoration-design-parts/fmc-italiana-spa-conveyor-parts-side.jpg
-    alt: Original conveyor parts side view (worn out)
+image:
+  url: /assets/projects/flowpack-restoration-design-parts/fmc-italiana-spa-coveyor-chain-parts-isometric-top.png
+  alt: CAD model isometric top view of conveyor chain modified parts
 ---
 
 ### A little about the project

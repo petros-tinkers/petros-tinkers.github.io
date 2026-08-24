@@ -7,13 +7,9 @@ tags:
 
 description: >
   I wanted to have a probe for my printer that is fixed on the carriage. I didn't find any option other than the Voron Tap. I thought to myself: Why buy a 40€ part and retrofit it onto my printer when I can spend close to that and several hours of my time to design and make my own "Cheap" one. All jokes aside the probe I designed costs <10€ in parts and performs the same.
-images: # These show up on the homepage. The 1st one on the project page.
-  - url: /assets/projects/3d-printer-probe/3d-printer-probe-right-iso.png
-    alt: Render of assembled probe
-  - url: /assets/projects/3d-printer-probe/3d-printer-probe-right.png
-    alt: Render of assembled Probe (Side View)
-  - url: /assets/projects/3d-printer-probe/3d-printer-probe-left-iso-no-top.png
-    alt: Render of the sliding carriage components
+image:
+  url: /assets/projects/3d-printer-probe/3d-printer-probe-right-iso.png
+  alt: Render of assembled probe
 --- -->
 
 ### Concept
