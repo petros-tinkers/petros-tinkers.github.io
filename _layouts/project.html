@@ -93,7 +93,10 @@ layout: default
       <nav class="project-nav" aria-label="Project navigation">
         {% if prev_project %}
         <a href="{{ prev_project.url }}" rel="prev">
-          <span class="secondary">← Previous project</span>
+          <span class="project-nav-dir">
+            <span class="project-nav-mark" aria-hidden="true">←</span>
+            Previous
+          </span>
           <span class="project-nav-title">{{ prev_project.title }}</span>
         </a>
         {% else %}
@@ -101,7 +104,10 @@ layout: default
         {% endif %}
         {% if next_project %}
         <a href="{{ next_project.url }}" class="project-nav-next" rel="next">
-          <span class="secondary">Next project →</span>
+          <span class="project-nav-dir">
+            Next
+            <span class="project-nav-mark" aria-hidden="true">→</span>
+          </span>
           <span class="project-nav-title">{{ next_project.title }}</span>
         </a>
         {% endif %}

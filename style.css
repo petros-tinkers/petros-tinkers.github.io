@@ -693,7 +693,7 @@ hr {
 .project-nav {
   display: flex;
   justify-content: space-between;
-  gap: 2em;
+  gap: 1.5em;
   margin-top: 3em;
   padding-top: 2em;
   border-top: 1px solid var(--border);
@@ -702,19 +702,60 @@ hr {
 .project-nav a {
   display: flex;
   flex-direction: column;
-  gap: 0.25em;
+  gap: 0.45em;
   max-width: 45%;
+  padding: 0.75em 1em;
+  color: var(--text);
+  font-weight: 400;
   text-decoration: none;
+  background-color: var(--panel);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 0 0 transparent;
+  transform: translateY(0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-nav-dir {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: 0.75em;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.project-nav-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 1.4em;
+  flex-shrink: 0;
+  background: var(--text);
+  color: var(--panel);
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: none;
 }
 
 .project-nav-title {
-  text-decoration: underline;
-  text-underline-offset: 35%;
+  font-weight: 500;
 }
 
 .project-nav-next {
   margin-left: auto;
   text-align: right;
+}
+
+.project-nav-next .project-nav-dir {
+  justify-content: flex-end;
+}
+
+.project-nav a:hover {
+  transform: translateY(-4px);
+  box-shadow: 5px 5px 0 var(--shadow);
 }
 
 .tags {

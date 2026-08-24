@@ -6,8 +6,8 @@ tags:
   - 3D
   - Automotive
 image:
-  url: /assets/projects/coil-spring-winder/coil-spring-winder.png
-  alt: Render of assembled winder tool
+  url: /assets/projects/coil-spring-winder/finger-un-remover-3000.webp
+  alt: Render of the assembled Finger Un-remover 3000 coil winder
 video: /assets/projects/coil-spring-winder/coil-winder-animation.mp4
 hero_contain: true
 ---
