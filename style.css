@@ -676,6 +676,16 @@ hr {
   border-radius: 0;
 }
 
+.article iframe.youtube-short {
+  display: block;
+  width: min(100%, 315px);
+  aspect-ratio: 9 / 16;
+  height: auto;
+  max-height: 90svh;
+  margin: 1em auto;
+  border: 1px solid var(--border);
+}
+
 .article .article-hero {
   margin-inline: 0;
 }
@@ -738,19 +748,41 @@ a.project {
     border-color 0.25s ease;
 }
 
+/* Do not add overflow:hidden here — hover scale/rotate on img/video must spill past this frame into the card. */
+.project-media {
+  aspect-ratio: 5 / 3;
+}
+
 .project img,
-.project video {
+.project video,
+.project-placeholder {
   display: block;
   width: 100%;
-  max-width: 100%;
+  height: 100%;
   margin: 0;
-  aspect-ratio: 5 / 3;
+  transform: translateY(0) scale(1) rotate(0deg);
+  transition: transform 0.25s ease;
+}
+
+.project img,
+.project video {
   object-fit: cover;
   background-color: var(--panel);
   border-radius: 0;
   border: none;
-  transform: translateY(0) scale(1) rotate(0deg);
-  transition: transform 0.25s ease;
+}
+
+.project-placeholder {
+  display: grid;
+  place-items: center;
+  background-color: var(--tint);
+  color: var(--text-secondary);
+}
+
+.project-placeholder svg {
+  display: block;
+  width: 32px;
+  height: 32px;
 }
 
 .project .fit-contain {
@@ -758,7 +790,8 @@ a.project {
 }
 
 .project:hover img,
-.project:hover video {
+.project:hover video,
+.project:hover .project-placeholder {
   transform: translateY(-12px) scale(1.1) rotate(-5deg);
 }
 

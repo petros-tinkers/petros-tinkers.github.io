@@ -13,24 +13,33 @@ First-person build logs. Sound like Petros wrote them: specific, a bit dry humor
 
 ## Structure
 
-- Frontmatter: `layout`, `title`, `subtitle`, `tags`, `image`, optional `video` / `hero_contain`.
+- Frontmatter: `layout`, `title`, `subtitle`, `tags`, `image`, optional `video` / `hero_contain`. Subtitles end with a period. Omit `image` / `video` until real assets exist; do not invent placeholder paths.
+- **When the user provides images or video:** put them under `assets/projects/<project-slug>/`, rename to a short kebab-case name that describes the content (e.g. `portable-din-psu-on-rail.jpg`), and use the real file type from the bytes (a Telegram `.png` that is actually JPEG → save as `.jpg`). Then wire `image.url` / `image.alt` (and `video` if applicable) into frontmatter. Do not leave chat-export filenames in the repo.
 - **Long articles** start with `## TL;DR`, then a horizontal rule (`---`), then the body. Short posts may skip TL;DR if a few paragraphs cover it; prefer TL;DR when the piece has multiple sections.
-- Headings: short, readable, with personality. Prefer `Stuck up (or down)` / `Second try: zip-tie slots` over `Problem` / `Temporary Solution` / `Challenges Encountered`.
+- Headings: short, punchy, informative. Someone skimming only headings should get a rough outline of the project. Prefer a compact claim (`Bulky power supplies are inconvenient`, `Stuck up (or down)`, `Second plug for battery power`) over long conversational titles (`Why the old supply stayed on the desk`), laundry-list detail (`Terminals, XT60, and a top-mounted fuse` → `Terminals, XT60, fuse on top`), or vague labels (`Problem`, `Spare plug, battery in`). Keep most headings short enough that the sticky left TOC does not wrap; wrapping once or twice is fine, not on every heading.
 - Preserve existing media (`![...]`, `<video>`) unless asked to change them.
-- End with a plain closing beat (what works now, what you'll update) — not a cliffhanger and not "watch this space."
+- End with a plain closing beat only when it adds a real fact (what works now, what you'll change next). Cut slogan closers and parallel punchlines that say nothing new.
 
 ## Voice
 
 - Tell a story: scene → what failed → what you tried → what worked (or what's still WIP). Room to breathe; not a telegram.
+- Write like someone speaking: join related clauses with normal `and` / `but` / commas. Not stacks of tiny period-cut sentences (`The wall side stays on a DIN rail. The supply snaps on and off.` → `The wall side stays on a DIN rail, and the supply snaps on and off.`).
 - Active first person (`I`). Name concrete parts, measurements, and failure modes.
-- Personality is fine (wink, zip ties vs fingers). Sentimental AI padding is not ("happy accident," "sense of fun and character," fake confessions like "more than I'd admit").
-- Stay close to source facts. Do not invent stakes, rarity, danger, or morals that weren't there.
+- Personality is fine (wink, zip ties vs fingers). Forced wit is not. If a joke needs explaining or sounds like ad copy, cut it.
+- Stay close to source facts. Do not invent stakes, rarity, danger, morals, motives, time estimates, or soft paraphrases the speaker did not make. If they said it was too bulky to hang, write that. Do not upgrade it into "worried it would fall," "unreliable mount," or similar filler.
+- When the user corrects a fact or framing, prefer their correction over the transcript wording.
+- From a **transcript or video source**: write as a standalone article. Do not reference "the video," filming, on-screen text, or what was shown on camera unless the user asks for that framing.
 
 ## Deslop (hard avoids)
 
+- Over-dramatized contrasts: not `Fine on the desk, useless on a wall` → say what actually failed in plain terms (`worked on the desk, but too bulky to hang on the wall`).
+- Failed wit / fake danger: not `inviting it onto my head`, not cartoon stakes the speaker didn't use.
+- Overused AI verbs and metaphors: avoid `live on a wall`, `comes alive`, and similar personification when a normal phrasing works (`hang it on the wall`, `powers everything`).
+- `The idea is simple.` must be followed by a colon and the **idea**, not by `I designed…`. Bad: `The idea is simple. I designed a magnetic connector…` Good: `The idea is simple: a magnetic connector that delivers power…`
+- Double-meaning or awkward words: avoid `hookups` and similar when a neutral word (`connections`, `wiring`) is clearer.
 - Staccato binary pairs: not `You can X. You shouldn't.` → join normally (`…, but…`) or cut the lecture.
 - Stating the obvious for drama (`of course you shouldn't drive with one light`).
-- Clever parallel punchlines (`dead enough… alive enough…`), "greatest-hits of," "take ownership," "until X lands," "boring path," "noticed the obvious."
+- Clever parallel punchlines (`dead enough… alive enough…`, `first thing you see, not the last`, `on the rail when I need it there, off the rail when I don't`), "greatest-hits of," "take ownership," "until X lands," "boring path," "noticed the obvious."
 - Em dashes. Throat-clearing (`Here's the thing`, `It's worth noting`). `Not X. Y.` reframes.
 - Emoji unless the author already uses them in that post.
 
@@ -38,8 +47,8 @@ First-person build logs. Sound like Petros wrote them: specific, a bit dry humor
 
 Too tight → add back investigation steps, side effects, and why a design choice mattered.
 Too dramatic → delete the sentence that only performs tension.
-After a rewrite, skim once for AI rhythm (stacked 3–5 word sentences, slogan closers) and fix.
+After a rewrite, skim once for AI rhythm (stacked 3–5 word sentences cut by periods, slogan closers) and fix by joining with normal speech connectors.
+
 ## Reference tone
 
 Match `_projects/1power-window-conversion.md`, `_projects/2celica-headlghts.md`, and `_projects/4coil-winder.md`.
-

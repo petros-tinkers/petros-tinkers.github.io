@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Coil Spring Winder Tool
-subtitle: Custom tool to wind a seatbelt spring safely
+subtitle: Custom tool to wind a seatbelt spring safely.
 tags:
   - 3D
   - Automotive
@@ -14,17 +14,17 @@ hero_contain: true
 
 ## TL;DR
 
-I was repairing the seatbelt rewind springs on the Celica when one fully unwound. Winding it back by hand cut up my hands and got me nowhere after half an hour. I modeled a small 3-part mould with a crank in CAD, printed it, and finished the job in about five minutes without the spring trying to take a finger with it.
+I was repairing the seatbelt rewind springs on the Celica when one fully unwound. Winding it back by hand cut up my hands and got me nowhere after half an hour. I modeled a small 3-part mould with a crank in CAD, printed it, and finished the job in about five minutes.
 
 ---
 
-## Why bother
+## Loose seatbelt spring
 
-Seatbelt springs store a lot of energy in a thin steel ribbon. Once one is loose, you need to coil it tight again and lock it before you put the retractor back together. Doing that with bare hands is slow, and the ribbon edges are sharp. I wanted something that held the coil in place while I cranked, then let me zip-tie it so it couldn't explode open on the bench.
+Seatbelt springs store a lot of energy in a thin steel ribbon. Once one is loose, you need to coil it tight again and lock it before you put the retractor back together. Doing that with bare hands is slow, and the ribbon edges are sharp. I wanted something that held the coil in place while I cranked, then let me zip-tie it so it couldn't spring open on the bench.
 
 ## First attempt
 
-The first version could wind the spring. What it couldn't do was let me tie the coil safely afterward. I added a push block meant to raise the coil a few millimeters so a zip tie could go around the outside. On the desk that sounded fine. In practice I couldn't get a tie around it, and the spring blew open on me twice.
+The first version could wind the spring, but it couldn't let me tie the coil safely afterward. I added a push block meant to raise the coil a few millimeters so a zip tie could go around the outside. On the desk that sounded fine. In practice I couldn't get a tie around it, and the spring blew open on me twice.
 
 ![Early Version of the tool](/assets/projects/coil-spring-winder/coil-winder-v1.jpg)
 
@@ -58,4 +58,4 @@ The useful change is five slot cutouts through the mould. You push zip ties thro
 Your browser does not support video playback.
 </video>
 
-Half an hour of bloody fingers turned into a few minutes of cranking. The seatbelt went back together, and the tool is still in the box for the next spring that gets away from me.
+The seatbelt went back together in a few minutes of cranking. The tool is still in the box for the next spring that gets away from me.

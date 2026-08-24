@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Celica Headlights
-subtitle: When life gives you broken lights… make them wink
+subtitle: When life gives you broken lights… make them wink.
 tags:
   - Automotive
   - Electronics
@@ -15,7 +15,7 @@ video: /assets/projects/celica-headlight/celica-winking.mp4
 
 One of our Celica’s pop-up headlights stopped deploying and retracting. The motor still worked, the wiring was fine, and the relays measured fine. The proprietary logic IC in Toyota's RTR Control Unit was half-fried.
 
-I bypassed relay #2 with a momentary switch so I can run that motor by hand. As a byproduct, I can now make the car wink, to the amazement of bystanders ;) 
+I bypassed relay #2 with a momentary switch so I can run that motor by hand. As a byproduct, I can now make the car wink, to the amazement of bystanders ;)
 
 That’s a temporary solution. The long-term plan is a programmable ATtiny board with optocouplers that restores factory-like automatic control and keeps the wink as a feature. Still working on the sync.
 

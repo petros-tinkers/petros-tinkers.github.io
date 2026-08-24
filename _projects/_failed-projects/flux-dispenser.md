@@ -1,7 +1,7 @@
 <!-- ---
 layout: project
 title: Flux Dispenser
-subtitle: A mechanical syringe dispenser
+subtitle: A mechanical syringe dispenser.
 tags:
   - 3D
 description: >

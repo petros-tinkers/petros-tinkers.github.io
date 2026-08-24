@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Korg SAS-20 Synth Restoration
-subtitle: Dead keys, carbon pads, and AliExpress stickers
+subtitle: Dead keys, carbon pads, and AliExpress stickers.
 tags:
   - Electronics
 image:
@@ -15,15 +15,15 @@ I found an old Korg SAS-20 while cleaning my girlfriend's room. It belonged to h
 
 ---
 
-## How it got here
+## Her dad's synth
 
-The synth sat unused for years. It was a gift from an old relationship of her dad's, so it meant something to him. He wanted to restore it and learn to play, then life got in the way. He used to run a company that designed and built cellphones for businessmen before mobiles were common in Greece. I looked up to him a lot. Fixing the thing felt like the least I could do.
+The synth sat unused for years. It was a gift from an old relationship of her dad's, so it meant something to him. He wanted to restore it and learn to play, then life got in the way. He used to run a company that designed and built cellphones for businessmen before mobiles were common in Greece. I looked up to him a lot, so fixing the thing felt like the least I could do.
 
 ## Silent keys
 
 Overall the SAS-20 looked good. The problem was the keyboard: press a key and nothing, or something sometimes. I figured years of sitting idle had left enough dust that the contacts weren't closing.
 
-I took it apart, cleaned thoroughly, pulled the membranes, and cleaned the PCB. Put it back together. Same dead and intermittent keys. So dust wasn't the whole story.
+I took it apart, cleaned thoroughly, pulled the membranes, and cleaned the PCB. Put it back together. Same dead and intermittent keys, so dust wasn't the whole story.
 
 <video width="100%" height="auto" controls playsinline>
   <source src="/assets/projects/korg-sas-20-synth-restoration/synth-pcb-cleaning.mp4" type="video/mp4">
@@ -76,6 +76,6 @@ The little cylindrical parts on the PCB are diodes. They stop ghosting: a note t
 
 ![Simple schematic of a generic keypad matrix](/assets/projects/korg-sas-20-synth-restoration/working-with-matrix-keypad-Fig2.webp)
 
-## Still going
+## A month later
 
 It's been getting played for about a month since the repair. Keys register, and the stickers are holding.

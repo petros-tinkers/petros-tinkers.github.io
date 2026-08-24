@@ -1,7 +1,7 @@
 <!-- ---
 layout: project
 title: 3D Printer Probe (WIP)
-subtitle: A cheap fixed-carriage ABL probe
+subtitle: A cheap fixed-carriage ABL probe.
 tags:
   - 3D
 

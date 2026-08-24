@@ -2,7 +2,7 @@
 layout: project
 title: Flowpack Custom Design Parts
 published: false
-subtitle: Replacement parts for a 1960s machine
+subtitle: Replacement parts for a 1960s machine.
 tags:
   - 3D
 image:

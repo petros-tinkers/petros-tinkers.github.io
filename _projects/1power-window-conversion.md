@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Manual → Power Window Conversion
-subtitle: Adding modern comforts to a classic car
+subtitle: Adding modern comforts to a classic car.
 tags:
   - Automotive
   - Electronics
@@ -12,7 +12,7 @@ image:
 
 ## TL;DR
 
-The old power window kit kept failing on trips. Windows stuck open or shut, no AC, no way to crank it by hand. I tore it out on the roadside and went back to a manual regulator. Fine until I drove alone and couldn't adjust the glass without taking a hand off the wheel.
+The old power window kit kept failing on trips. Windows stuck open or shut, no AC, and no way to crank by hand. I tore it out on the roadside and went back to a manual regulator. That worked until I drove alone and couldn't adjust the glass without taking a hand off the wheel.
 
 The previous install was garbage: speaker wire, a 20 A fuse on a 7–10 A load, power straight off ignition, cable angles steep enough to crack the PTFE sheaths, and mounting that shook itself loose. I rebuilt it with M4 rivnuts, proper gauge wire, crimps, heatshrink, an isolating relay, a resettable fuse, and fabric tape on the harness. The old DPDT switch ran the motor directly with no current sensing, so holding too long blew fuses. The new kit uses a control module with one-touch, current sensing, and a relay H-bridge. Switches only signal the module. Transistors and flyback diodes keep the relay drive safe.
 
@@ -20,15 +20,13 @@ Prefer video? [Watch the short](https://youtube.com/shorts/bVmr3LBrW28).
 
 ---
 
-## Context
+## Stuck on the roadside
 
-### Stuck on the roadside
+The previous conversion died on me more than once, usually in summer, with the window jammed open or shut and no manual override. No AC either. Eventually I pulled over, tore the door apart, yanked the kit, and put the crank back in.
 
-The previous conversion died on me more than once, usually in summer, usually with the window jammed open or shut and no manual override. No AC. Miserable. Eventually I pulled over, tore the door apart, yanked the kit, and put the crank back in.
+That fixed reliability, and created a new problem. With a passenger I could ask them to crank. Alone, I was stuck: sweat it out, or try to drive and operate the window at the same time.
 
-That fixed reliability and created a new problem. With a passenger I could ask them to crank. Alone, I was stuck: sweat it out, or try to drive and operate the window at the same time.
-
-### The previous installation
+## The previous installation
 
 Whoever did this ignored the instructions. Extra unused mounting holes turned the passenger door into Swiss cheese. The chain cables ran at too steep an angle, cracked the PTFE sheaths, and let road grit and moisture into the mechanism until it bound up.
 
@@ -36,7 +34,7 @@ Power came straight from ignition. The "wiring" was speaker wire. The only overc
 
 ## Rebuilding it
 
-Proper wire gauge and a correctly rated fuse are table stakes. A few other choices matter just as much.
+Proper wire gauge and a correctly rated fuse matter, and a few other choices matter just as much.
 
 ### Mounting with rivnuts
 
@@ -61,7 +59,7 @@ Wiring loom on top of that if you want to go further.
 
 The old setup was a 5-pin DPDT switch, two motor leads, and ignition power. 12 V fed the normally open contacts, ground the normally closed. Motor leads sat on the commons. At rest, nothing reached the motor. Press one way and one lead gets 12 V while the other is grounded. Press the other way and polarity flips, so the motor reverses.
 
-Reliable, and too dumb. You hold the switch the whole time, which is a bad idea while driving. Hold past the end of travel and the stalled motor pulls hard current, the fuse pops, and you're hunting for a spare with a stuck window.
+It was reliable, but too dumb. You hold the switch the whole time, which is a bad idea while driving. Hold past the end of travel and the stalled motor pulls hard current, the fuse pops, and you're hunting for a spare with a stuck window.
 
 ![Wiring diagram of previous installation](/assets/projects/power-window-conversion/old-powerwindow-installation.png)
 
@@ -69,13 +67,13 @@ Reliable, and too dumb. You hold the switch the whole time, which is a bad idea 
 
 The new kit includes a control module with one-touch operation (and auto-up on lock, which I didn't use). You can set the motor current limit, which is useful if you value your fingers.
 
-The switches are 4-pin SPDT. They don't carry motor current. They tell the module what you want. The module decides up or down from there.
+The switches are 4-pin SPDT. They don't carry motor current. They tell the module what you want, and the module decides up or down from there.
 
 ![Wiring diagram of new installation](/assets/projects/power-window-conversion/new-powerwindow-installation.png)
 
 ![Image of power window contol unit pcb](/assets/projects/power-window-conversion/control-module-pcb.png)
 
-A microcontroller watches two inputs: switch position and motor current. Press up and it drives the motor until current hits the stop threshold, then cuts power. If the glass is already up, current spikes immediately and it stops. That keeps the motor and the fuse alive.
+A microcontroller watches two inputs: switch position and motor current. Press up and it drives the motor until current hits the stop threshold, then cuts power. If the glass is already up, current spikes immediately and it stops. That keeps the motor and the fuse from frying.
 
 ### Current sensing
 
@@ -115,4 +113,4 @@ Close-up:
 
 ![Celica in Sifnos Island, Cyclades, Greece](/assets/projects/power-window-conversion/celica-sifnos.png)
 
-A few days after the install, my partner, some friends, and I drove to Sifnos. The windows got a workout on those narrow island roads. I was skeptical of one-touch at first. One press and the glass moves while your eyes stay on the road and your hands stay on the wheel. I came around fast.
+A few days after the install, my partner, some friends, and I drove to Sifnos. The windows got a workout on those narrow island roads. I was skeptical of one-touch at first, but one press moves the glass while your eyes stay on the road and your hands stay on the wheel. I came around fast.
